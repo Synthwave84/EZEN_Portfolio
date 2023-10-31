@@ -1,5 +1,8 @@
 package com.synth.mapper;
 
-public interface MemberMapper {
+import com.synth.domain.MemberVO;
 
+public interface MemberMapper {
+	
+	void join(MemberVO vo);
 }
