@@ -15,6 +15,6 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void join(MemberVO vo) {
-		
+		memberMapper.join(vo);
 	}
 }

@@ -3,5 +3,29 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.synth.mapper.MemberMapper">
-
+	
+	<insert id="join" parameterType="com.synth.domain.MemberVO">
+	INSERT INTO MEMBER_TAB
+	        (
+	         MEMBER_ID, 
+	         MEMBER_NAME, 
+	         MEMBER_EMAIL, 
+	         MEMBER_PASSWORD, 
+	         MEMBER_ZIPCODE, 
+	         MEMBER_ADDR, 
+	         MEMBER_DEADDR, 
+	         MEMBER_PHONE
+	        )
+	   VALUES
+	        (
+	         #{member_id},
+	         #{member_name},
+	         #{member_email},
+	         #{member_password},
+	         #{member_zipcode},
+	         #{member_addr},
+	         #{member_deaddr},
+	         #{member_phone}
+	        )
+	</insert>
 </mapper>

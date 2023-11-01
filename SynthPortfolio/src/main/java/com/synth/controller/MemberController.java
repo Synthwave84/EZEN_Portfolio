@@ -2,8 +2,10 @@ package com.synth.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.synth.domain.MemberVO;
 import com.synth.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -21,5 +23,13 @@ public class MemberController {
 	@GetMapping("/join")
 	public void join() {
 	log.info("<< join 메소드 호출 >>");
+	}
+	
+//	회원 정보 저장
+	@PostMapping("/join")
+	public String join(MemberVO vo) {
+		log.info("회원정보 :" + vo);
+		memberService.join(vo);
+		return "";
 	}
 }
