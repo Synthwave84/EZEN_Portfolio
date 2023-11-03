@@ -35,7 +35,8 @@ public class MemberController {
 		return "";
 	} // Passed
 	
-//	3) 회원가입시 아이디 중복체크 작업.
+//	3) 회원가입시 아이디 중복체크 작업. 
+//		join.jsp의 A.01과 연계
 	@GetMapping("/isIdInUse")
 	public ResponseEntity<String> idCheck(String member_id) throws Exception {
 //		로그 작업
@@ -43,7 +44,7 @@ public class MemberController {
 
 		ResponseEntity<String> entity = null;
 		
-//		아이디 중복 체크 작업.
+//		아이디 중복 체크 작업. 
 		String isIdInUse = "";
 //		사용자가 입력한 ID값이 데이터베이스 상에 존재하는가?
 		if(memberService.idCheck(member_id) != null) {
