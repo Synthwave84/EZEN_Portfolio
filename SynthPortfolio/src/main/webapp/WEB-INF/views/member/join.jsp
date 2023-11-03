@@ -21,12 +21,12 @@
         <form role="form" id="joinForm" method="post" action="/member/join">
           <div class="box-body">
           <div class="form-group row">
-            <label for="" class="col-2">아이디</label>
+            <label for="member_id" class="col-2">아이디</label>
             <div class="col-7">
               <input type="text" class="form-control" name="member_id" id="member_id" placeholder="아이디 입력">
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-outline-primary" id="btnIdCheck">아이디 중복 체크</button>
+              <button type="button" class="btn btn-outline-primary" id="isIdInUse">아이디 중복 체크</button>
             </div>
           </div>
           <div class="form-group row">
@@ -197,13 +197,39 @@
 
 <script>
   $(document).ready(function () {
+
+
+    $("#isIdInUse").click(function() {
+    // 아이디 중복체크. A.01
+      
+      // 스프링에서 받아올 값 확인하기.
+      // 스프링에서 가져올 값은 자바스크립트의 오브젝트 방식으로 작성.
+      $.ajax({
+        url : "/member/isIdInUse",
+        type : "get",
+        dataType : "text",
+        data: {member_id : $("#member_id").val()},
+        // 스프링에서 넘어온 데이터를 기반으로 중복 체크.
+        success : function(result) {
+          if(result == "true") {
+            alert("아이디 사용이 가능합니다.");
+          }else {
+            alert("아이디가 사용중입니다.");
+            $("#member_id").val("");
+            $("#member_id").focus();
+            return;
+          }
+        }
+      })
+    });
+
     $("#btnJoin").click(() =>{
 
 
 
     joinForm.submit();
 
-});
+    });
 
 
 
