@@ -38,4 +38,25 @@
 		WHERE
 			MEMBER_ID = #{member_id}
 	</select>
+	<!-- 3) 로그인 아이디 조회를 위한 SELECT 쿼리 -->
+	<select id="login" parameterType="String" resultType="com.synth.domain.MemberVO">
+		SELECT 
+			MEMBER_ID, 
+			MEMBER_NAME, 
+			MEMBER_EMAIL, 
+			MEMBER_PASSWORD, 
+			MEMBER_ZIPCODE, 
+			MEMBER_ADDR, 
+			MEMBER_DEADDR, 
+			MEMBER_PHONE,
+			MEMBER_LASTLOGIN
+		FROM 
+			MEMBER_TAB 
+		WHERE 
+			MEMBER_ID = #{member_id}
+	
+	
+	
+	</select>
+	
 </mapper>

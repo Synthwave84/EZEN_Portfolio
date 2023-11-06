@@ -10,4 +10,6 @@ public interface MemberMapper {
 	void join(MemberVO vo);
 //	2) join 시 DB에 회원 id가 중복되었는지의 여부를 검사.
 	public String idCheck(String member_id);
+//	3) login 준비 작업
+	MemberVO login(String member_id);
 }

@@ -67,6 +67,11 @@ public class MemberController {
 		return entity;
 	}
 	
+//	4) 로그인 폼 페이지.
+	@GetMapping("/login")
+	public void login() {
+	};
+	
 	
 	
 }

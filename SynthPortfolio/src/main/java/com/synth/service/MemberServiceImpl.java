@@ -23,4 +23,9 @@ public class MemberServiceImpl implements MemberService {
 	public String idCheck(String member_id) {
 		return memberMapper.idCheck(member_id);
 	}
+	@Override
+	public MemberVO login(String member_id) {
+		
+		return memberMapper.login(member_id);
+	}
 }

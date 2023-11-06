@@ -7,4 +7,6 @@ public interface MemberService {
 	void join(MemberVO vo);
 	
 	public String idCheck(String member_id);
+	
+	MemberVO login(String member_id); 
 }
