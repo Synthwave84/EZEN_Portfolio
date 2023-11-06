@@ -203,6 +203,9 @@
   $(document).ready(function () {
 
 	// 아이디 중복 확인 여부 버튼 연관 작업
+
+    // 아이디 중복체크 버튼 사용 여부 확인.
+    let useIdCheck = false;
     $("#isIdInUse").click(function() {
       // 아이디 중복 검사 버튼 클릭 시, 아이디 작성 여부 검사 (빈칸 검증)
       if($("#member_id").val() == "") {
@@ -225,8 +228,10 @@
         success : function(result) {
           if(result == "true") {
             alert("아이디 사용이 가능합니다.");
+            useIdCheck = true;
           }else {
             alert("아이디가 사용중입니다.");
+            useIdCheck = false;
             $("#member_id").val("");
             $("#member_id").focus();
             return;
@@ -235,8 +240,13 @@
       })
     });
 
-    $("#btnJoin").click(() =>{
+    $("#btnJoin").click(function() {
 
+      // 사용자의 버튼 사용 여부 확인.
+      if(!useIDCheck) {
+          alert("아이디 중복체크 확인 바랍니다.");
+          return false;
+        }
 
 
     joinForm.submit();
