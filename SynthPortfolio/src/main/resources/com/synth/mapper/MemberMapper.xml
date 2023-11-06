@@ -25,6 +25,7 @@
 	         #{member_zipcode},
 	         #{member_addr},
 	         #{member_deaddr},
+	         
 	         #{member_phone}
 	        )
 	</insert>

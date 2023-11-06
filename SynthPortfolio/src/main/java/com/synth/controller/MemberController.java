@@ -2,10 +2,12 @@ package com.synth.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.synth.domain.MemberVO;
 import com.synth.service.MemberService;
@@ -20,6 +22,8 @@ import lombok.extern.log4j.Log4j;
 public class MemberController {
 
 	private final MemberService memberService;
+//	암호화 작업용 인터페이스 호출
+	private final PasswordEncoder passwordEncoder;
 	
 //	1) join 주소 연결
 	@GetMapping("/join")
@@ -29,8 +33,11 @@ public class MemberController {
 	
 //	2)회원 정보 저장 
 	@PostMapping("/join")
-	public String join(MemberVO vo) {
+	public String join(MemberVO vo, RedirectAttributes rttr) throws Exception {
 		log.info("회원정보 :" + vo);
+		
+		vo.setMember_password(passwordEncoder.encode(vo.getMember_password()));
+		log.info("암호화 처리 된 비밀번호" + vo.getMember_password());
 		memberService.join(vo);
 		return "";
 	} // Passed
