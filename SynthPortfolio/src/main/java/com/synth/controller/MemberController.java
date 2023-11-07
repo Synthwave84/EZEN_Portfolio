@@ -1,5 +1,7 @@
 package com.synth.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.synth.domain.MemberVO;
+import com.synth.dto.LoginDTO;
 import com.synth.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -70,8 +73,40 @@ public class MemberController {
 //	4) 로그인 폼 페이지.
 	@GetMapping("/login")
 	public void login() {
+	
 	};
 	
+//	5)로그인 작업
+	@PostMapping("/login") 
+	public String login(LoginDTO dto, HttpSession session, RedirectAttributes rttr) {
+		log.info(dto);
+		MemberVO db_vo = memberService.login(dto.getMember_id());
+		
+		String msg = "";
+		String url = "";
+		
+		if(db_vo != null) {
+			
+//			db상의 암호화 된 비밀번호와 사용자가 입력한 암호화 되지 않은 비밀번호를 비교하여 일치 하는지 여부를 판단 하는 구문
+			if(passwordEncoder.matches(dto.getMember_password(), db_vo.getMember_password())) {
+				session.setAttribute("loginStatus", db_vo);
+				url ="/"; 
+			}else {
+//				로그인 폼 주소
+				url="/member/login";
+				msg="비밀번호가 잘못 되었습니다";
+//				로그인 폼 jsp파일에서 사용하기 위한 코드
+				rttr.addFlashAttribute("msg", msg);
+			}
+		}else{
+//		 	아이디 일치하지 않을 시 
+			url ="/member/login";
+			msg ="아이디가 잘못 되었습니다.";
+			rttr.addFlashAttribute("msg",msg);
+					}
+		log.info("로그인 성공");
+		return "redirect:" + url;
+	}
 	
 	
 }

@@ -54,9 +54,6 @@
 			MEMBER_TAB 
 		WHERE 
 			MEMBER_ID = #{member_id}
-	
-	
-	
 	</select>
 	
 </mapper>
