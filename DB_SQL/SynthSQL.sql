@@ -35,6 +35,6 @@ CREATE TABLE BOARD (
 	    CONSTRAINT  PK_BOARD       PRIMARY KEY(BOARD_NO)
 		);
         
--- 시퀀스 생성
+-- 시퀀스 생성 (게시글 번호)
 CREATE SEQUENCE SEQ_BOARD;
 

@@ -35,8 +35,8 @@ public class BoardController {
 		log.info("레지스터 등록 데이터 : " + board);
 		boardService.register(board);
 		
-		return "redirect:/sboard/list";
-	};
+		return "/";
+	}
 	
 	
 }
