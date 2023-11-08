@@ -1,3 +1,8 @@
+
+-- 포트폴리오 쇼핑몰 작업.
+
+-- 회원정보 테이블
+
 CREATE TABLE MEMBER_TAB 
 (
         MEMBER_ID             VARCHAR2(15)            NOT NULL,
@@ -16,4 +21,20 @@ CREATE TABLE MEMBER_TAB
 DROP TABLE MEMBER_TAB;
 SELECT * FROM MEMBER_TAB;
 
+-- 게시판 테이블
+
+CREATE TABLE BOARD (
+		  
+	    BOARD_NO    NUMBER,                             -- 글번호
+	    TITLE       VARCHAR2(100)   NOT NULL,           -- 제목
+	    CONTENT     VARCHAR2(1000)  NOT NULL,           -- 내용
+	    AUTHOR      VARCHAR2(100)   NOT NULL,           -- 작성자
+	    CREATEDATE  DATE            DEFAULT SYSDATE,    -- 등록일
+	    MODIFYDATE  DATE            DEFAULT SYSDATE,    -- 수정일
+	    READCOUNT   NUMBER,          
+	    CONSTRAINT  PK_BOARD       PRIMARY KEY(BOARD_NO)
+		);
+        
+-- 시퀀스 생성
+CREATE SEQUENCE SEQ_BOARD;
 

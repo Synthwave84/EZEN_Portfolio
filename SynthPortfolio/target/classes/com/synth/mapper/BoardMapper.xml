@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.synth.mapper.BoardMapper">
+<!-- 게시글 작성을 위한 SQL 인서트 구문 -->
+<insert id="register" parameterType="com.synth.domain.BoardVO">
+	INSERT INTO BOARD
+	(
+		BOARD_NO, 
+		TITLE, 
+		CONTENT, 
+		AUTHOR
+	) 
+	VALUES
+	(
+		SEQ_SBOARD.NEXTVAL, 
+		#{title}, 
+		#{content}, 
+		#{author}
+	)
+</insert>
+</mapper>
