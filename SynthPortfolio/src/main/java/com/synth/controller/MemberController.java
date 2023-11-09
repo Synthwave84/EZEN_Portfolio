@@ -42,7 +42,7 @@ public class MemberController {
 		vo.setMember_password(passwordEncoder.encode(vo.getMember_password()));
 		log.info("암호화 처리 된 비밀번호" + vo.getMember_password());
 		memberService.join(vo);
-		return "";
+		return "redirect:/member/join";
 	} // Passed
 	
 //	3) 회원가입시 아이디 중복체크 작업. 
@@ -90,7 +90,7 @@ public class MemberController {
 //			db상의 암호화 된 비밀번호와 사용자가 입력한 암호화 되지 않은 비밀번호를 비교하여 일치 하는지 여부를 판단 하는 구문
 			if(passwordEncoder.matches(dto.getMember_password(), db_vo.getMember_password())) {
 				session.setAttribute("loginStatus", db_vo);
-				url ="/"; 
+				url ="/board/register"; 
 			}else {
 //				로그인 폼 주소
 				url="/member/login";

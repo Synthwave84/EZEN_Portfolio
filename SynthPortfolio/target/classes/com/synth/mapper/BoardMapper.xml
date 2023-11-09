@@ -14,10 +14,102 @@
 	) 
 	VALUES
 	(
-		SEQ_SBOARD.NEXTVAL, 
+		SEQ_BOARD.NEXTVAL, 
 		#{title}, 
 		#{content}, 
 		#{author}
 	)
 </insert>
+<!--LIST에 출력할 게시글 목록 조회를 위한 인서트 SQL 구문-->
+<select id="getList" resultType="com.synth.domain.BoardVO">
+		SELECT 	BOARD_NO, 
+				TITLE, 
+				AUTHOR, 
+				CREATEDATE, 
+				READCOUNT
+		FROM BOARD
+		ORDER BY BOARD_NO DESC;
+</select>
+<!-- 검색 기능 작업  -->
+	<!-- 검색기능은 공통적으로 사용 되므로 반복작업을 한다. -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+			<foreach collection="typeArr" item="type">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							subject like '%' || #{keyword} || '%'
+						</when>
+						<when test="type == 'A'.toString()">
+							author like '%' || #{keyword} || '%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%' || #{keyword} || '%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+<!-- 페이징 기능 구현을 위한 SQL SELECT , CDATA 작업 -->
+	<!-- CDATA 섹션 -->
+	<!-- 페이징 구현 기능을 위한 작업 -->
+	<select id="getListWithPage" resultType="com.synth.domain.BoardVO" parameterType="com.synth.domain.Criteria">
+		<![CDATA[
+		SELECT 
+    			BOARD_NO, 
+    			TITLE, 
+    			CONTENT, 
+    			AUTHOR, 
+    			CREATEDATE, 
+    			MODIFYDATE, 
+    			READCOUNT
+     	FROM 
+		    (
+                SELECT 
+                		/*+INDEX_DESC(BOARD PK_BOARD) */
+		        		ROWNUM RN, 
+		        		BOARD_NO, 
+		        		TITLE, 
+		        		CONTENT, 
+		        		AUTHOR, 
+		        		CREATEDATE, 
+		        		MODIFYDATE, 
+		        		READCOUNT
+                FROM 
+                		BOARD
+		    		WHERE 
+		    	]]>
+		    
+		    <include refid="criteria"></include>
+		    
+		    <![CDATA[
+		        ROWNUM <= #{pgNum} * #{amount}
+		    		)
+                WHERE RN > (#{pgNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<!-- 전체 데이터 갯수 조회 -->
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM BOARD WHERE
+		<include refid="criteria"></include>
+		BOARD_NO > 0
+	</select>
+	<select id="get" resultType="com.synth.domain.BoardVO" parameterType="Long">
+		SELECT 
+			BOARD_NO, 
+			TITLE, 
+			CONTENT, 
+			AUTHOR, 
+			CREATEDATE, 
+			MODIFYDATE 
+		FROM  
+			BOARD 
+		WHERE 
+			BOARD_NO = #{board_no}
+	</select>
+	
+
 </mapper>
