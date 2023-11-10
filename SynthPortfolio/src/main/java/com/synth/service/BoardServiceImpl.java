@@ -25,25 +25,36 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getList() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return boardMapper.getList();
 	}
 
 	@Override
 	public int getTotalCount(Criteria cri) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return boardMapper.getTotalCount(cri);
 	}
 
 	@Override
 	public List<BoardVO> getListWithPage(Criteria cri) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return boardMapper.getListWithPage(cri);
 	}
 
 	@Override
-	public BoardVO get(Long board_no) {
-		// TODO Auto-generated method stub
-		return boardMapper.get(board_no);
+	public BoardVO read(Long bno) {
+		boardMapper.readCount(bno);
+		return boardMapper.read(bno);
+		
 	}
+
+
+	@Override
+	public void delete(Long bno) {
+		boardMapper.delete(bno);
+	}
+
+	
+
+	
 }
