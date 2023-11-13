@@ -1,0 +1,7 @@
+
+SynthPortfolio/.classpath
+SynthPortfolio/.factorypath
+SynthPortfolio/.settings/org.eclipse.jdt.apt.core.prefs
+SynthPortfolio/target/classes/com/synth/domain/BoardVO.class
+*.class
+SynthPortfolio/target/m2e-wtp/web-resources/META-INF/maven/com.docmall/controller/pom.properties

@@ -9,7 +9,6 @@ import com.synth.domain.Criteria;
 public interface BoardMapper {
 
 	public void register(BoardVO board);
-	
 
 	public List<BoardVO> getList();
 
@@ -17,6 +16,9 @@ public interface BoardMapper {
 
 	public List<BoardVO> getListWithPage(Criteria cri);
 	
-
-	public BoardVO get(Long board_no);
+	public BoardVO read(Long bno);
+	
+	public void readCount(Long bno);
+	
+	public void delete(Long bno);
 }

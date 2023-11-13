@@ -25,18 +25,22 @@ SELECT * FROM MEMBER_TAB;
 
 CREATE TABLE BOARD (
 		  
-	    BOARD_NO    NUMBER,                             -- 글번호
+	    BNO    NUMBER,                             -- 글번호
 	    TITLE       VARCHAR2(100)   NOT NULL,           -- 제목
 	    CONTENT     VARCHAR2(1000)  NOT NULL,           -- 내용
 	    AUTHOR      VARCHAR2(100)   NOT NULL,           -- 작성자
 	    CREATEDATE  DATE            DEFAULT SYSDATE,    -- 등록일
 	    MODIFYDATE  DATE            DEFAULT SYSDATE,    -- 수정일
-	    READCOUNT   NUMBER,          
-	    CONSTRAINT  PK_BOARD       PRIMARY KEY(BOARD_NO)
+	    READCOUNT   NUMBER          DEFAULT 0,
+	    CONSTRAINT  PK_BOARD       PRIMARY KEY(BNO)
 		);
-        
+DROP TABLE BOARD;
 -- 시퀀스 생성 (게시글 번호)
 CREATE SEQUENCE SEQ_BOARD;
+DROP SEQUENCE SEQ_BOARD;
+
+SELECT * FROM BOARD;
+COMMIT;
 
 SELECT * FROM BOARD;
 

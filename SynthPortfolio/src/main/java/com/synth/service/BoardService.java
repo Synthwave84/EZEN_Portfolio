@@ -12,12 +12,18 @@ public interface BoardService {
 	
 //	페이지에 보여줄 게시글 목록 작업
 	public List<BoardVO> getList();
-//	총 데이터 갯수 작업
-	public int getTotalCount(Criteria cri);
+
 //	페이징 기넝 구현을 위한 작업
 	public List<BoardVO> getListWithPage(Criteria cri);
 	
+//	총 데이터 갯수 작업
+	public int getTotalCount(Criteria cri);
+	
 //	게시물 보기 또는 수정 폼= 1개
-	public BoardVO get(Long board_no);
+	public BoardVO read(Long bno);
+	
+	
+//	게시물 삭제 작업
+	public void delete(Long bno);
 	
 }
