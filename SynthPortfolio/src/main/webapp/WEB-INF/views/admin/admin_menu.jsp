@@ -5,9 +5,13 @@
 <head>
 </head>
 <body>
+<p>Hello</p>
 <div class="sidebar">
-<%@include file="/WEB-INF/views/admin/comm/sidebar.jsp" %>
+	<%@include file="/WEB-INF/views/admin/comm/sidebar.jsp" %>
+	<div class="container">
+		<h1>abc</h1>
+	</div>
 </div>
-<p>테스트 성공</p>
+
 </body>
 </html>
