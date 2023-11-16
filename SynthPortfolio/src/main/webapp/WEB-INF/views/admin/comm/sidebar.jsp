@@ -19,7 +19,7 @@
   
   .side-bar {
     position: fixed;    /* 스크롤을 따라오도록 지정 */
-    background-color: rgb(255, 80, 5);
+    background-color: rgb(255, 100, 25);
     min-width: 12%;
     min-height: 100%;   /* 사이드바의 높이를 전체 화면 높이의 90%로 지정 */
   }
@@ -27,7 +27,7 @@
   .side-bar ul > li > a {
     border-bottom:solid 1px rgb(212, 212, 212);
     display: block;
-    color: rgb(165, 165, 165);
+    color: white;
     font-size: 1.4rem;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -35,34 +35,27 @@
     transition: 0.3s;
   }
   
-  /* 자식의 position이 absolute일 때 자식을 영역 안에 가두어 준다 */
+
   .side-bar > ul > li {
     position: relative;
   }
   
-  /* 모든 메뉴가 마우스 인식 시 반응 */
+
   .side-bar ul > li:hover > a {
-    background-color: rgb(123, 123, 123);
-    border-bottom: 1px solid rgb(128, 128, 128);
+    background-color: rgb(168, 53, 0);
+    border-bottom: 3px solid rgb(255, 77, 0);
   }
   
-  /* 1차 메뉴의 항목이 마우스 인식 시에 2차 메뉴 등장 */
+
   .side-bar > ul > li:hover > ul {
     display: block;
     position: absolute;
-    background-color: rgb(26, 21, 60);
-    top: 0;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
-    left: 100%;     /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
-    width: 100%;    /* 1차 메뉴의 너비를 상속 */
+    background-color: rgb(255, 125, 85);
+    top: 0;         
+    left: 100%;     
+    width: 100%;    
   }
-  
-  
-  
-  
-  
-  /* 커스텀 끝 */
   </style>
-  <p>HELLO!!!!!!!!!!!!!!</p>
   <aside class="side-bar">
 
     <ul>

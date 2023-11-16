@@ -5,7 +5,7 @@
 <head>
 </head>
 <body>
-<p>Hello</p>
+<%@include file="/WEB-INF/views/admin/comm/header.jsp" %>
 <div class="sidebar">
 	<%@include file="/WEB-INF/views/admin/comm/sidebar.jsp" %>
 	<div class="container">
