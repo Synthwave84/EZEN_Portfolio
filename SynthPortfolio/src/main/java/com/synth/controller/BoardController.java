@@ -78,6 +78,15 @@ public class BoardController {
 			model.addAttribute("board", board);
 		}
 		
+//		5) 수정 작업
+		@PostMapping("/modify") 
+		public String modify(BoardVO board, Criteria cri, RedirectAttributes rttr) {
+			log.info(board);
+			boardService.modify(board);
+			return "redirect:/board/list"+cri.getListLink();
+		}
+		
+//		6)삭제 작업
 		@GetMapping("/delete")
 		public String delete(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
 			

@@ -14,7 +14,7 @@ public class AdminVO {
 		);
 	*/
 	
-	private String 	administrator_id;
-	private String 	administrator_pw;
+	private String 		administrator_id;
+	private String 		administrator_pw;
 	private Date		administrator_login_time;
 }

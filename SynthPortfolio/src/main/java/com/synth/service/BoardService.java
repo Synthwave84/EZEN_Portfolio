@@ -22,6 +22,8 @@ public interface BoardService {
 //	게시물 보기 또는 수정 폼= 1개
 	public BoardVO read(Long bno);
 	
+//	게시물 수정 폼
+	public void modify(BoardVO board); 
 	
 //	게시물 삭제 작업
 	public void delete(Long bno);

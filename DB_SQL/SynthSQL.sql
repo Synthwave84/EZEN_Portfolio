@@ -96,7 +96,8 @@ CREATE TABLE CG_CODE_TBL
 (
     CG_CODE     NUMBER  PRIMARY KEY,
     CG_PRTCODE  NUMBER  NULL,
-    CG_NAME     VARCHAR2(40)  NOT NULL
+    CG_NAME     VARCHAR2(40)  NOT NULL,
+    FOREIGN KEY(CG_PRTCODE) REFERENCES CG_CODE_TBL(CG_CODE)
 );
 
 INSERT INTO CG_CODE_TBL (CG_CODE,CG_PRTCODE,CG_NAME) 
@@ -179,15 +180,15 @@ DROP TABLE ITEM_TBL;
 CREATE TABLE ITEM_TBL (
         ITEM_NO             NUMBER                  NOT NULL,
         CG_CODE             NUMBER                  NOT NULL,
-        ITEM_NAME           VARCHAR2(50)            NULL,
-        ITEM_PRICE          NUMBER                  NULL,
+        ITEM_NAME           VARCHAR2(50)            NOT NULL,
+        ITEM_PRICE          NUMBER                  NOT NULL,
         ITEM_DISCOUNT       NUMBER                  NULL,
-        ITEM_MANUFACTURE    VARCHAR2(50)            NULL,
-        ITEM_CONTENT        VARCHAR2(4000)          NULL,       -- 내용이 4000BYTE 초과여부판단? CLOB
-        ITEM_UP_FOLDER      VARCHAR2(50)            NULL,
-        ITEM_IMG            VARCHAR2(100)           NULL,       -- 날짜폴더경로가 포함하여 파일이름저장
-        ITEM_AMOUNT         NUMBER                  NULL,
-        ITEM_BUY            CHAR(1)                 NULL,       -- 대문자 Y또는 N값.
+        ITEM_MANUFACTURE    VARCHAR2(50)            NOT NULL,
+        ITEM_CONTENT        VARCHAR2(4000)          NOT NULL,       -- 내용이 4000BYTE 초과여부판단? CLOB
+        ITEM_UP_FOLDER      VARCHAR2(50)            NOT NULL,
+        ITEM_IMG            VARCHAR2(100)           NOT NULL,       -- 날짜폴더경로가 포함하여 파일이름저장
+        ITEM_AMOUNT         NUMBER                  NOT NULL,
+        ITEM_BUY            CHAR(1)                 NOT NULL,       -- 대문자 Y또는 N값.
         ITEM_DATE           DATE DEFAULT SYSDATE    NULL,
         ITEM_UPDATEDATE     DATE DEFAULT SYSDATE    NULL,
         GRADE               NUMBER                  NULL,
@@ -195,16 +196,9 @@ CREATE TABLE ITEM_TBL (
         RAM_TYPE            VARCHAR2(10)            NULL,
         M2                  CHAR(1)                 NULL,
         F_FACTOR            VARCHAR2(10)            NULL,
-        GENERAL_TYPE        VARCHAR2(20)            NULL,
         
         CONSTRAINT  PK_ITEM_NO      PRIMARY KEY(ITEM_NO),
-        FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE),
-        FOREIGN KEY(GRADE)          REFERENCES ITEM_COMP_TBL(GRADE),
-        FOREIGN KEY(GEN)            REFERENCES ITEM_COMP_TBL(GEN),
-        FOREIGN KEY(RAM_TYPE)       REFERENCES ITEM_COMP_TBL(RAM_TYPE),
-        FOREIGN KEY(M2)             REFERENCES ITEM_COMP_TBL(M2),
-        FOREIGN KEY(F_FACTOR)       REFERENCES ITEM_COMP_TBL(F_FACTOR),
-        FOREIGN KEY(GENERAL_TYPE)   REFERENCES ITEM_COMP_TBL(GENERAL_TYPE)
+        FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE)
 );
 
 
