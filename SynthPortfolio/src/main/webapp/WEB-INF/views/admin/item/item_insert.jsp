@@ -14,24 +14,30 @@
     <title>AdminLTE 2 | Starter</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    
-    <%@include file="/WEB-INF/views/admin/comm/plugin1.jsp" %>
-    <%@include file="/WEB-INF/views/admin/comm/plugin2.jsp" %>
-    
   </head>
-
+<%@ include file="/WEB-INF/views/admin/comm/plugin1.jsp" %>
+<%@ include file="/WEB-INF/views/admin/comm/plug-in.jsp" %>
   <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-
+	
     <!-- Main Header -->
     <%@ include file="/WEB-INF/views/admin/comm/header.jsp" %>
     <!-- Left side column. contains the logo and sidebar -->
-    <%@ include file="/WEB-INF/views/admin/comm/sidebar.jsp" %>
+    <%@ include file="/WEB-INF/views/admin/comm/nav.jsp" %>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-
+      <section class="content-header">
+        <h1>
+          amazing
+          <small>Optional description</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+          <li class="active">Here</li>
+        </ol>
+      </section>
 
       <!-- Main content -->
       <section class="content container-fluid">
@@ -44,7 +50,7 @@
                 <h3 class="box-title mt-5">상품등록</h3>
               </div>
               <!-- 폼태그 안에 인풋타입 중 'file' 이 있을 경우 enctype="multipart/form-data" 필수로 추가-->
-        <form role="form" method="post" action="/admin/product/item_insert" enctype="multipart/form-data">
+        <form role="form" method="post" action="/admin/item/item_insert" enctype="multipart/form-data">
           <div class="box-body">
           <div class="form-group row">
             <label for="title" class="col-sm-2">카테고리</label>
@@ -79,7 +85,46 @@
             </div>
             <label for="title" class="col-sm-2">제조사</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" name="item_manufacture" id="item_manufacture" placeholder="제조사 입력">
+              <select class="form-control" name="item_manufacture" id="item_manufacture">
+                <option value="">CPU</option>
+                <option value="INTEL">인텔</option>
+                <option value="AMD">AMD</option>
+                <option value="">메인보드</option>
+                <option value="ASUS">ASUS</option>
+                <option value="GIGABYTE">GIGABYTE</option>
+                <option value="MSI">MSI</option>
+                <option value="ASROCK">ASROCK</option>
+                <option value="">그래픽카드</option>
+                <option value="GALAX">GALAX</option>
+                <option value="ZOTAC">ZOTAC</option>
+                <option value="EMTEK">EMTEK</option>
+                <option value="COLORFUL">COLORFUL</option>
+                <option value="SAPPHIRE">SAPPHIRE</option>
+                <option value="HIS">HIS</option>
+                <option value="">파워</option>
+                <option value="SEASONIC">시소닉</option>
+                <option value="MICRONICS">마이크론</option>
+                <option value="SUPERFLOWER">슈퍼플라워</option>
+                <option value="">케이스</option>
+                <option value="3RSYS">3RSYS</option>
+                <option value="DARKFLASH">darkflash</option>
+                <option value="ABKO">앱코</option>
+                <option value="">쿨러</option>
+                <option value="3RSYS">3RSYS</option>
+                <option value="NOCTUA">Noctua</option>
+                <option value="">메모리</option>
+                <option value="SAMSUNG">삼성</option>
+                <option value="MICRON">Micron</option>
+                <option value="GSKILL">G.Skill</option>
+                <option value="">SSD / HDD</option>
+                <option value="WESTERN">웨스턴디지털</option>
+                <option value="SEAGATE">시게이트</option>
+                <option value="MICRON">마이크론</option>
+                <option value="SK">하이닉스</option>
+                <option value="">기타</option>
+                <option value="Logitech">로지텍</option>
+                <option value="Hansung">한성</option>
+              </select>
             </div>
           </div>
           <div class="form-group row">
@@ -93,7 +138,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="title" class="col-sm-2">상품 간략설명</label>
+            <label for="title" class="col-sm-2">상품 간략 설명</label>
             <div class="col-sm-10">
               <textarea class="form-control" id="item_short_detail" name="item_short_detail" rows="3"></textarea>
             </div>
@@ -117,17 +162,66 @@
               </select>
             </div>
           </div>
-          <div class="form-group row">
-          <label for=title class="col-sm-2">기본 사양</label>
-          	<div class="col-sm-4">
-          	<select class="form-control" name="grade" id="grade">
-          		<option value="1"></option>
-          		<option value="2"></option>
-          		<option value="3"></option>
-          		<option value="4"></option>
-          	</select>
-          	</div>
-      
+          <fieldset class="form-group border p-3">
+      		<legend class="w-auto px-2" style="text-align: center;">호환성 목록</legend>
+      		<div class="form-group row">
+            <label for="title" class="col-sm-2">등급</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="grade" id="grade">
+                <option value="1">1등급 -하급-</option>
+                <option value="2">2등급 -중급-</option>
+                <option value="3">3등급 -상급-</option>
+                <option value="4">4등급 -최상급-</option>
+              </select>
+            </div>
+            <label for="title" class="col-sm-2">세대</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="gen" id="gen">
+              	<option value="">------인텔-----</option>
+              	<option value="INT_LGA1151v2">인텔 LGA1151 v2 -8~9세대-</option>
+                <option value="INT_LGA1200">인텔 LGA1200 -10~11세대-</option>
+                <option value="INT_LGA1700">인텔 LGA1700 -12~14세대-</option>
+                <option value="">-----AMD-----</option>
+                <option value="AMD_AM4">라이젠 AM4 -1~5천번대-</option>
+                <option value="AMD_AM5">라이젠 AM5 -7천번대-</option>
+              </select>
+            </div>
+            <label for="title" class="col-sm-2">램 타입</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="ram_type" id="ram_type">
+              	<option value="DDR4">DDR4</option>
+                <option value="DDR5">DDR5</option>
+              </select>
+            </div>
+             <label for="title" class="col-sm-2">램 타입</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="ram_type" id="ram_type">
+              	<option value="DDR4">DDR4</option>
+                <option value="DDR5">DDR5</option>
+              </select>
+            </div>
+             <label for="title" class="col-sm-2">M.2 슬롯</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="m2" id="m2">
+              	<option value="0">없음</option>
+                <option value="1">1개</option>
+                <option value="2">2개</option>
+                <option value="3">3개</option>
+                <option value="4">4개</option>
+              </select>
+            </div>
+             <label for="title" class="col-sm-2">폼팩터</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="f_factor" id="f_factor">
+              	<option value="itx">ITX</option>
+                <option value="matx">M-ATX</option>
+                <option value="atx">ATX</option>
+                <option value="eatx">E-ATX</option>
+              </select>
+            </div>
+            
+          </div>          
+      	  </fieldset>
           </div>
           
           <div class="box-footer">
@@ -150,7 +244,6 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 </div>
   <!-- REQUIRED JS SCRIPTS -->
 
@@ -179,7 +272,7 @@
           console.log("1차 카테고리 코드", cg_prtcode);
 
         // 1차 카테고리 선택에 의한 2차카테고리 정보를 가져오는 url
-          let url= "/admin/common/category/secondCategory/" + cg_prtcode;// + ".json";
+          let url= "/common/category/secondCategory/" + cg_prtcode;// + ".json";
 
         // getJSON : 스프링에 요청시 데이터를 json으로 받는 기능. ajax기능 제공
           $.getJSON(url, function(secondCategoryList) {
@@ -235,5 +328,7 @@
       
     
   </script>
+
+<%@include file="/WEB-INF/views/admin/comm/plugin2.jsp" %>
   </body>
   </html>

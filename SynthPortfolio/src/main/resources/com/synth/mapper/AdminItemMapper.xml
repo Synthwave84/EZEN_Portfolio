@@ -29,7 +29,7 @@
 			)
 			VALUES
 				(
-					#{item_no},
+					SEQ_ITEM_TBL.NEXTVAL, 
 					#{cg_code},
 					#{item_name},
 					#{item_price},
@@ -41,8 +41,8 @@
 					#{item_amount},
 					#{item_buy},
 					#{item_short_detail},
-					#{item_date},
-					#{item_updatedate},
+					SYSDATE,
+					SYSDATE,
 					#{grade},
 					#{gen},
 					#{ram_type},

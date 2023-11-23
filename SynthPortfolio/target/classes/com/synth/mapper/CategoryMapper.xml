@@ -11,7 +11,7 @@
 			CG_PRTCODE,
 			CG_NAME 
 		FROM 
-			CATEGORY_TBL 
+			CG_CODE_TBL
 		WHERE 
 			CG_PRTCODE IS NULL
 		
@@ -21,7 +21,7 @@
 		SELECT 
 			CG_CODE,CG_PRTCODE, CG_NAME 
 		FROM 
-			CATEGORY_TBL
+			CG_CODE_TBL
 		WHERE 
 			CG_prtcode =#{cg_prtcode}
 	</select>
@@ -32,7 +32,7 @@
 			CG_PRTCODE, 
 			CG_NAME 
 		FROM 
-			CATEGORY_TBL 
+			CG_CODE_TBL
 		WHERE 
 			CG_CODE = #{cg_code}
 	</select>
