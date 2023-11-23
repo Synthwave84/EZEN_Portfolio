@@ -202,8 +202,10 @@ CREATE TABLE ITEM_TBL (
         FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE)
 );
 
-
-
+INSERT INTO ITEM_TBL 
+(GRADE)
+VALUES ('1');
+item_no, cg_code, item_name, item_price, item_discount, item_manufacture, item_content, item_up_folder, item_img, item_amount, item_buy, item_short_detail, item_date, item_updatedate, grade, gen, ram_type, m2, f_factor
 
 
 
