@@ -12,7 +12,9 @@
 
 
 <!-- CSS용 부트스트랩 파일 -->
+<%@include file="/WEB-INF//views/admin/comm/plugin1.jsp" %>
 <%@include file="/WEB-INF/views/comm/plugin2.jsp" %>
+<link rel="stylesheet" href="/css/adLogin.css">
 
 </head>
 <body>

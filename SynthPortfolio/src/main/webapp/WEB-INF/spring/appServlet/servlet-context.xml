@@ -15,16 +15,47 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!--  resources mapping="매핑주소" location="실제경로" /-->
 	<resources mapping="/resources/**" location="/resources/" />
-
-
+	
+	<!-- 추가 -->
+	<resources mapping="/bower_components/**" location="/resources/bower_components/" />
+	<resources mapping="/dist/**" location="/resources/dist/" />
+	<resources mapping="/plugins/**" location="/resources/plugins/" />
+	<resources mapping="/css/**" location="/resources/css/" />
+	<resources mapping="/js/**" location="/resources/js/" />
+	<resources mapping="/img/**" location="/resources/img/" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
+		
+	   <!-- 파일 업로드 설정 -->
+	   <!-- CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver() -->
+	   <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	      <beans:property name="defaultEncoding" value="utf-8"></beans:property>
+	      <!-- 전체 파일: 1024 * 1024 * 10 bytes = 100MB -->
+	      <beans:property name="maxUploadSize" value="104857560"></beans:property>
+	      <!-- 개별 파일: 1024 * 1024 * 2 bytes = 20MB -->
+	      <beans:property name="maxUploadSizePerFile" value="2097152"></beans:property>
+	      <!-- 업로드 시 서버의 임시 폴더 경로 -->
+	      <beans:property name="uploadTempDir"   value="file:/C:/DEV/Devtools/upload/temp"></beans:property>
+	      <!-- 업로드 시 서버 메모리 사용 크기 설정 -->
+	      <beans:property name="maxInMemorySize" value="10485756"></beans:property>
+	   </beans:bean>
+	   
+	   <!-- 업로드 폴더 경로 설정 -->
+	   <beans:bean id="uploadPath" class="java.lang.String">
+	   		<beans:constructor-arg value="C:\\DEV\\Devtools\\upload\\product\\"></beans:constructor-arg>
+	   </beans:bean>
+	   
+	   <!-- CKEditor에서 업로드되는 폴더 경로 설정 -->
+	   <beans:bean id="uploadCKPath" class="java.lang.String">
+	  	 <beans:constructor-arg value="C:\\DEV\\Devtools\\upload\\ckeditor\\"></beans:constructor-arg>
+	   </beans:bean>
+	   
 	<context:component-scan base-package="com.synth.controller" />
 	
 	
 	
 </beans:beans>
+

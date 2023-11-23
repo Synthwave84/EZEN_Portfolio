@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.synth.mapper.AdminItemMapper">
+<insert id="item_insert" parameterType="com.synth.domain.ItemVO">
+	INSERT INTO
+			ITEM_TBL 
+			(
+				ITEM_NO, 
+				CG_CODE, 
+				ITEM_NAME, 
+				ITEM_PRICE, 
+				ITEM_DISCOUNT, 
+				ITEM_MANUFACTURE, 
+				ITEM_CONTENT, 
+				ITEM_UP_FOLDER, 
+				ITEM_IMG, 
+				ITEM_AMOUNT, 
+				ITEM_BUY, 
+				ITEM_SHORT_DETAIL, 
+				ITEM_DATE, 
+				ITEM_UPDATEDATE, 
+				GRADE, 
+				GEN, 
+				RAM_TYPE, 
+				M2, 
+				F_FACTOR
+			)
+			VALUES
+				(
+					#{item_no},
+					#{cg_code},
+					#{item_name},
+					#{item_price},
+					#{item_discount},
+					#{item_manufacture},
+					#{item_content},
+					#{item_up_folder},
+					#{item_img},
+					#{item_amount},
+					#{item_buy},
+					#{item_short_detail},
+					#{item_date},
+					#{item_updatedate},
+					#{grade},
+					#{gen},
+					#{ram_type},
+					#{m2},
+					#{f_factor}
+				)
+</insert>
+</mapper>
