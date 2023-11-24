@@ -86,37 +86,37 @@
             <label for="title" class="col-sm-2">제조사</label>
             <div class="col-sm-4">
               <select class="form-control" name="item_manufacture" id="item_manufacture">
-                <option value="">CPU</option>
+                <option value="">----CPU----</option>
                 <option value="INTEL">인텔</option>
                 <option value="AMD">AMD</option>
-                <option value="">메인보드</option>
+                <option value="">----메인보드----</option>
                 <option value="ASUS">ASUS</option>
                 <option value="GIGABYTE">GIGABYTE</option>
                 <option value="MSI">MSI</option>
                 <option value="ASROCK">ASROCK</option>
-                <option value="">그래픽카드</option>
+                <option value="">----그래픽카드----</option>
                 <option value="GALAX">GALAX</option>
                 <option value="ZOTAC">ZOTAC</option>
                 <option value="EMTEK">EMTEK</option>
                 <option value="COLORFUL">COLORFUL</option>
                 <option value="SAPPHIRE">SAPPHIRE</option>
                 <option value="HIS">HIS</option>
-                <option value="">파워</option>
+                <option value="">----파워----</option>
                 <option value="SEASONIC">시소닉</option>
                 <option value="MICRONICS">마이크론</option>
                 <option value="SUPERFLOWER">슈퍼플라워</option>
-                <option value="">케이스</option>
+                <option value="">----케이스----</option>
                 <option value="3RSYS">3RSYS</option>
                 <option value="DARKFLASH">darkflash</option>
                 <option value="ABKO">앱코</option>
-                <option value="">쿨러</option>
+                <option value="">----쿨러----</option>
                 <option value="3RSYS">3RSYS</option>
                 <option value="NOCTUA">Noctua</option>
-                <option value="">메모리</option>
+                <option value="">----메모리----</option>
                 <option value="SAMSUNG">삼성</option>
                 <option value="MICRON">Micron</option>
                 <option value="GSKILL">G.Skill</option>
-                <option value="">SSD / HDD</option>
+                <option value="">----SSD / HDD----</option>
                 <option value="WESTERN">웨스턴디지털</option>
                 <option value="SEAGATE">시게이트</option>
                 <option value="MICRON">마이크론</option>
@@ -198,7 +198,6 @@
             <div class="col-sm-8" id="m2_opt">
               <label for="title" class="col-sm-8">M.2 슬롯</label>
               <select class="form-control" name="m2" id="m2">
-              	<option value="">M.2 갯수</option>
               	<option value="0">없음</option>
                 <option value="1">1개</option>
                 <option value="2">2개</option>

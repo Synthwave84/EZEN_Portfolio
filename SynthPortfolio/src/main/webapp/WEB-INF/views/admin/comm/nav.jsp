@@ -3,22 +3,12 @@
     
     <!-- CSS용 부트스트랩 파일 -->
 
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="background-color: black">
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
+
 
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
