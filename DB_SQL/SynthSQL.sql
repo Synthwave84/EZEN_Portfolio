@@ -195,12 +195,13 @@ CREATE TABLE ITEM_TBL (
         GRADE               NUMBER                  NULL,
         GEN                 VARCHAR2(20)            NULL,
         RAM_TYPE            VARCHAR2(10)            NULL,
-        M2                  CHAR(1)                 NULL,
+        M2                  NUMBER                  NULL,
         F_FACTOR            VARCHAR2(10)            NULL,
         
         CONSTRAINT  PK_ITEM_NO      PRIMARY KEY(ITEM_NO),
         FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE)
 );
+DROP SEQUENCE SEQ_ITEM_TBL;
 CREATE SEQUENCE SEQ_ITEM_TBL;
 INSERT INTO ITEM_TBL 
 (GRADE)

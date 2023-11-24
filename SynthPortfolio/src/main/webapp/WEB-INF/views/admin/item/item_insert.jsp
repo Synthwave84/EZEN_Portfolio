@@ -56,7 +56,7 @@
             <label for="title" class="col-sm-2">카테고리</label>
             <div class="col-sm-3">
               <select class="form-control" id="firstCategory">
-                <option>1차 카테고리 선택</option>
+                <option value="0">1차 카테고리 선택</option>
                 <c:forEach items="${firstCategoryList}" var="cgcodeVO">
                     <option value="${cgcodeVO.cg_code }">${cgcodeVO.cg_name } </option>
                 </c:forEach>
@@ -164,18 +164,19 @@
           </div>
           <fieldset class="form-group border p-3">
       		<legend class="w-auto px-2" style="text-align: center;">호환성 목록</legend>
-      		<div class="form-group row">
-            <label for="title" class="col-sm-2">등급</label>
-            <div class="col-sm-4">
+      		<div class="form-group row" id="compatibility">
+            <div class="col-sm-8" id="grade_opt">
+              <label for="title" class="col-sm-8">등급</label>
               <select class="form-control" name="grade" id="grade">
+              	<option value="0">등급 지정</option>
                 <option value="1">1등급 -하급-</option>
                 <option value="2">2등급 -중급-</option>
                 <option value="3">3등급 -상급-</option>
                 <option value="4">4등급 -최상급-</option>
               </select>
             </div>
-            <label for="title" class="col-sm-2">세대</label>
-            <div class="col-sm-4">
+            <div class="col-sm-8" id="gen_opt">
+              <label for="title" class="col-sm-8">세대</label>
               <select class="form-control" name="gen" id="gen">
               	<option value="">------인텔-----</option>
               	<option value="INT_LGA1151v2">인텔 LGA1151 v2 -8~9세대-</option>
@@ -186,23 +187,18 @@
                 <option value="AMD_AM5">라이젠 AM5 -7천번대-</option>
               </select>
             </div>
-            <label for="title" class="col-sm-2">램 타입</label>
-            <div class="col-sm-4">
+            <div class="col-sm-8" id="ram_opt">
+              <label for="title" class="col-sm-8">램 타입</label>
               <select class="form-control" name="ram_type" id="ram_type">
+              	<option value="">램 타입</option>
               	<option value="DDR4">DDR4</option>
                 <option value="DDR5">DDR5</option>
               </select>
             </div>
-             <label for="title" class="col-sm-2">램 타입</label>
-            <div class="col-sm-4">
-              <select class="form-control" name="ram_type" id="ram_type">
-              	<option value="DDR4">DDR4</option>
-                <option value="DDR5">DDR5</option>
-              </select>
-            </div>
-             <label for="title" class="col-sm-2">M.2 슬롯</label>
-            <div class="col-sm-4">
+            <div class="col-sm-8" id="m2_opt">
+              <label for="title" class="col-sm-8">M.2 슬롯</label>
               <select class="form-control" name="m2" id="m2">
+              	<option value="">M.2 갯수</option>
               	<option value="0">없음</option>
                 <option value="1">1개</option>
                 <option value="2">2개</option>
@@ -210,13 +206,15 @@
                 <option value="4">4개</option>
               </select>
             </div>
-             <label for="title" class="col-sm-2">폼팩터</label>
-            <div class="col-sm-4">
+             
+            <div class="col-sm-8" id="factor_opt">
+              <label for="title" class="col-sm-8">폼팩터</label>
               <select class="form-control" name="f_factor" id="f_factor">
-              	<option value="itx">ITX</option>
-                <option value="matx">M-ATX</option>
-                <option value="atx">ATX</option>
-                <option value="eatx">E-ATX</option>
+              	<option value=""></option>
+              	<option value="1">ITX</option>
+                <option value="2">M-ATX</option>
+                <option value="3">ATX</option>
+                <option value="4">E-ATX</option>
               </select>
             </div>
             
@@ -297,18 +295,11 @@
           // console.log(optionStr);
           // 2차카테고리에 <option>태그들이 추가됨.
           secondCategory.append(optionStr); 
-
-      
           });
-          
         });
         
-
         // 파일 첨부시 이미지 미리보기.
         // 파일 첨부에 따른 이벤트 관련 정보를 e란 매개변수를 통하여 참조.
-      
-      
-      
         $("#uploadFile").change(function(event) {
             // 선택한 파일
             let file = event.target.files[0]; // 선택한 파일중 첫번째 파일을 가리킨다.
@@ -323,10 +314,94 @@
               $("#img_preview").attr("src", event.target.result);
             }
           });
-    });
-    
+
+
+    $("#firstCategory").change(function() {
+      let selectedCategory = $(this).val();
+		console.log("코드" , selectedCategory)
+      // 스위치 문을 사용하여 1차 카테고리에 따라 다른 셀렉트 태그를 보여주거나 숨김
       
+      
+      switch (selectedCategory) {
+
+        case "0": 
+        	$("#grade_opt").hide();
+    		$("#gen_opt").hide();
+    		$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+            
+        	break;
+        case "1":
+        	$("#grade_opt").show();
+        	$("#gen_opt").show();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+          break;
+        case "2":
+        	$("#grade_opt").show();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+          break;
+        case "3":
+        	$("#grade_opt").show();
+        	$("#gen_opt").show();
+        	$("#ram_opt").show();
+        	$("#m2_opt").show();
+            $("#factor_opt").show();
+          break;
+        case "4":
+        	$("#grade_opt").hide();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").show();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+         break;
+        case "5":
+        	$("#grade_opt").show();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+         break;
+        case "6":
+        	$("#grade_opt").hide();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+         break;
+        case "7":
+        	$("#grade_opt").show();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").show();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+         break;
+        case "8":
+        	$("#grade_opt").hide();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").show();
+         break;
+        case "9":
+        	$("#grade_opt").hide();
+        	$("#gen_opt").hide();
+        	$("#ram_opt").hide();
+        	$("#m2_opt").hide();
+            $("#factor_opt").hide();
+         break;
+      }
+    });
+
+
     
+  
+  });
   </script>
 
 <%@include file="/WEB-INF/views/admin/comm/plugin2.jsp" %>

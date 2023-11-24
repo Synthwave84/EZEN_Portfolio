@@ -24,7 +24,7 @@ public class ItemVO {
         GRADE               NUMBER                  NULL,
         GEN                 VARCHAR2(20)            NULL,
         RAM_TYPE            VARCHAR2(10)            NULL,
-        M2                  CHAR(1)                 NULL,
+        M2                  varchar2(10)            NULL,
         F_FACTOR            VARCHAR2(10)            NULL,   
 */
 		private Integer item_no;
