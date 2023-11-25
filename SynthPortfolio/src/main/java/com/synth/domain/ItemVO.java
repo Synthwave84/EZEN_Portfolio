@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ItemVO {
 /*
-  ITEM_NO             NUMBER                  NOT NULL,
+  		ITEM_NO             NUMBER                  NOT NULL,
         CG_CODE             NUMBER                  NOT NULL,
         ITEM_NAME           VARCHAR2(50)            NOT NULL,
         ITEM_PRICE          NUMBER                  NOT NULL,

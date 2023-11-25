@@ -50,4 +50,93 @@
 					#{f_factor}
 				)
 </insert>
+<sql id="criteria">
+    <!-- prefixOverrides : 실행될 쿼리의 <trim> 문 안에 쿼리 가장 앞에 해당하는 문자들이 있으면 자동으로 지워준다 -->
+       <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+          <foreach collection="typeArr" item="type"><!-- getType() 동작 -->
+             <trim prefix="OR">
+                <choose>
+                   <when test="type == 'N'.toString()">
+                      PRO_NAME like '%' || #{keyword} || '%'
+                   </when>
+                   <when test="type == 'C'.toString()">
+                      PRO_NUM like '%' || #{keyword} || '%'
+                   </when>
+                   <when test="type == 'P'.toString()">
+                      PRO_PUBLISHER like '%' || #{keyword} || '%'
+                   </when>
+                </choose>
+             </trim>
+          </foreach>
+       </trim>
+    </sql>
+    
+    <!-- CDATA section -->
+    <select id="item_list" resultType="com.synth.domain.ItemVO" parameterType="com.synth.domain.Criteria">
+      <![CDATA[
+      SELECT
+         	ITEM_NO, 
+			CG_CODE, 
+			ITEM_NAME, 
+			ITEM_PRICE, 
+			ITEM_DISCOUNT, 
+			ITEM_MANUFACTURE, 
+			ITEM_CONTENT, 
+			ITEM_UP_FOLDER, 
+			ITEM_IMG, 
+			ITEM_AMOUNT, 
+			ITEM_BUY, 
+			ITEM_SHORT_DETAIL, 
+			ITEM_DATE, 
+			ITEM_UPDATEDATE, 
+			GRADE, 
+			GEN, 
+			RAM_TYPE, 
+			M2, 
+			F_FACTOR
+      FROM (
+	            SELECT 
+	            /*+INDEX_DESC(PRODUCT_TBL PK_ITEM_NO) */
+	            ROWNUM RN, 
+	            ITEM_NO, 
+				CG_CODE, 
+				ITEM_NAME, 
+				ITEM_PRICE, 
+				ITEM_DISCOUNT, 
+				ITEM_MANUFACTURE, 
+				ITEM_CONTENT, 
+				ITEM_UP_FOLDER, 
+				ITEM_IMG, 
+				ITEM_AMOUNT, 
+				ITEM_BUY, 
+				ITEM_SHORT_DETAIL, 
+				ITEM_DATE, 
+				ITEM_UPDATEDATE, 
+				GRADE, 
+				GEN, 
+				RAM_TYPE, 
+				M2, 
+				F_FACTOR
+   		FROM 
+      		ITEM_TBL
+        WHERE
+            ]]>
+            <!-- refid : reference id -->
+            <include refid="criteria"></include>
+            
+            <![CDATA[
+            	ROWNUM <= #{pageNum} * #{amount}
+         	 )
+      			WHERE 
+      				RN > (#{pageNum} -1) * #{amount}
+      		]]>
+    </select>
+    
+    <select id="getTotalCount" resultType="int">
+       SELECT COUNT(*) FROM ITEM_TBL WHERE
+       <!-- 검색에 대한 정보가 들어온다 -->
+       <include refid="criteria"></include>
+       <!-- 검색을 사용하지 않으면  -->
+       ITEM_NO > 0
+    </select>
 </mapper>

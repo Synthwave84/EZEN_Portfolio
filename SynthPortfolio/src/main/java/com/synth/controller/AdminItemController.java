@@ -4,19 +4,25 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.synth.domain.Criteria;
 import com.synth.domain.ItemVO;
+import com.synth.dto.PageDTO;
 import com.synth.service.AdminItemService;
 import com.synth.service.CategoryService;
 import com.synth.utils.FileUtils;
@@ -115,5 +121,31 @@ public class AdminItemController {
 			}
 			if(printWriter != null) printWriter.close();
 		}
-	}	
+	}
+	
+	
+	@GetMapping("/item_list")
+	public void item_list(Criteria cri, Model model) throws Exception {
+		
+		cri.setAmount(3);
+		List<ItemVO> item_list = adminItemService.item_list(cri);
+		
+		item_list.forEach(vo -> {
+			vo.setItem_up_folder(vo.getItem_up_folder().replace("\\", "/"));
+		});
+		model.addAttribute("item_list", item_list);
+		
+		int totalCount = adminItemService.getTotalCount(cri);
+		model.addAttribute("pageMaker", new PageDTO(cri, totalCount));
+	}
+	
+	@ResponseBody
+	@GetMapping("/imageDisplay")
+	public ResponseEntity<byte[]> imageDisplay(String dateFolderName, String fileName) throws Exception {
+		
+		return FileUtils.getFile(uploadPath + dateFolderName, fileName);
+	}
+	
+	
+	
 }
