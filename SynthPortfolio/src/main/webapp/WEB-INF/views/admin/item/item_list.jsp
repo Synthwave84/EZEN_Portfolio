@@ -109,8 +109,8 @@
             <div class="box-footer clearfix">
               <div class="row">
                 <div class="col-md-2">
-                  <button class="btn btn-primary" id="btn_check_modify1" role="button">체크상품수정1</button>
-                  <button class="btn btn-primary" id="btn_check_modify2" role="button">체크상품수정2</button>
+                  <button class="btn btn-primary" id="btn_checked_item_modifier" role="button">체크상품수정1</button>
+                 
                   <!-- 1) 페이지번호 클릭시 사용 [이전] 1 2 3 4 5 [다음], action="/admin/product/list"-->
                   <!-- 2) 목록에서 제목 클릭시 사용, actionForm.setAttribute("action", "/admin/product/get");-->
                   <form id="actionForm" action="" method="get">
@@ -161,9 +161,10 @@
           </div>
 
         </div>
-      </div>
-
+      
+	
     </section>
+    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -298,10 +299,89 @@
     $("#btn_item_insert").on("click", function() {
       location.href="/admin/item/item_insert";
     });
+     // 체크박스수정1 버튼 클릭
+     $("#btn_checked_item_modifier").on("click", function() {
+      // 체크박스 유무확인
+      if($("input[name='check']:checked").length == 0) {
+        alert("수정할 상품을 체크하세요");
+        return;
+      }
+      // 배열문법
+      let item_no_arr = []; // 체크된 상품코드 배열
+      let item_price_arr = []; // 체크된 상품가격 배열
+      let item_buy_arr = []; // 체크된 상품진열 배열
 
+      $("input[name='check']:checked").each(function() {
+        item_no_arr.push($(this).val());
+        item_price_arr.push($(this).parent().parent().find("input[name='item_price']").val()); // 첫번째 parent는 td, 두번째 parent는 tr이 된다.
+        item_buy_arr.push($(this).parent().parent().find("select[name='item_buy']").val());
+      });
+
+      console.log("상품코드", item_no_arr);
+      console.log("상품가격", item_price_arr);
+      console.log("상품유무", item_buy_arr);
+
+      $.ajax({
+      url:'/admin/item/modify_checked_item', // 체크상품수정 스프링 매핑주소
+      type:'post',
+      data:{item_no_arr : item_no_arr, item_price_arr : item_price_arr, item_buy_arr : item_buy_arr}, // {파라미터명1 : 값1, 파라미터명2 : 값2 ...},
+      dataType:'text', // json, text, xml, html 등
+      success: function(result){
+        if(result == "success"){
+          alert("체크상품이 수정되었습니다.")
+
+        }
+      } 
+      });
+    });
+
+  
+
+ // 상품수정
+    $("button[name='btn_item_edit']").on("click", function() {
+
+      // 수정 상품코드
+      let item_no = $(this).parent().parent().find("input[name='check']").val();
+      
+      // console.log("상품코드", pro_num);
+
+      // 뒤로가기 클릭후 다시 수정버튼 클릭시 코드 중복되는 부분이 있어 삭제작업, 기존 bno를 삭제했던것과 동일
+      actionForm.find("input[name='item_no']").remove();
+
+      // <input type="hidden" name="pro_num" id="pro_num" />
+      actionForm.append('<input type="hidden" name="item_no" id="item_no" value="' + item_no + '" />');
+
+      actionForm.attr("method", "get");
+      actionForm.attr("action", "/admin/item/item_edit");
+      actionForm.submit();
+    })
+
+    // 상품 삭제 화살표함수 사용시 상품코드값을 읽을 수 없다.
+    $(".btn_item_del").on("click", function() {
+
+      // text() : 입력양식태그가 아닌 일반태그의 값을 변경하거나 읽을 때 사용
+      let item_name =$(this).parent().parent().find(".item_name").text();
+      if(!confirm(item_name + " 을(를) 삭제하시겠습니까?")) return;
+      
+      // val() method : input, select, textarea 등 태그의 값을 변경하거나 읽을 때 사용
+      let item_no = $(this).parent().parent().find("input[name='check']").val();
+
+      // console.log("상품코드", pro_num);
+
+      // 뒤로가기 클릭후 다시 수정버튼 클릭시 코드 중복되는 부분이 있어 삭제작업, 기존 bno를 삭제했던것과 동일
+      actionForm.find("input[name='item_no']").remove();
+
+      // <input type="hidden" name="pro_num" id="pro_num" />
+      actionForm.append('<input type="hidden" name="item_no" id="item_no" value="' + item_no + '" />');
+
+      actionForm.attr("method", "post");
+      actionForm.attr("action", "/admin/item/item_delete");
+      actionForm.submit();
+    });
+    
    
 
-  }); //
+  });
 
 </script>
 </body>

@@ -32,6 +32,33 @@ public class AdminItemServiceImpl implements AdminItemService {
 		return adminItemMapper.getTotalCount(cri);
 	}
 
+	@Override
+	public void modify_checked_item(List<Integer> item_no_arr, List<Integer> item_price_arr, List<String> item_buy_arr) {
+		
+		for(int i=0; i<item_no_arr.size(); i++) {
+			adminItemMapper.modify_checked_item(item_no_arr.get(i), item_price_arr.get(i), item_buy_arr.get(i));
+		}
+		
+	}
+
+	@Override
+	public ItemVO item_edit(Integer item_no) {
+		
+		return adminItemMapper.item_edit(item_no);
+	}
+
+	@Override
+	public void item_edit_success(ItemVO vo) {
+		adminItemMapper.item_edit_success(vo);
+		
+	}
+
+	@Override
+	public void item_delete(Integer item_no) {
+		adminItemMapper.item_delete(item_no);
+		
+	}
+
 
 	
 	
