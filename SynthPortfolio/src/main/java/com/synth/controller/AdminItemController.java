@@ -171,6 +171,7 @@ public class AdminItemController {
 		
 		ItemVO itemVO = adminItemService.item_edit(item_no);
 		
+		log.warn("호출정보 : " + itemVO);
 		itemVO.setItem_up_folder(itemVO.getItem_up_folder().replace("\\", "/"));
 		model.addAttribute("itemVO", itemVO);
 		
@@ -206,13 +207,13 @@ public class AdminItemController {
 	}
 	
 	@PostMapping("item_delete")
-	public String item_delete(Criteria cri, Integer item_no) throws Exception {
+	public String item_delete(Criteria cri, Integer item_no, RedirectAttributes rttr) throws Exception {
 		
 		log.warn("상품코드" + item_no);
 		
 		adminItemService.item_delete(item_no);
-		
-		return " redirect:/admin/item/item_list" + cri.getListLink();
+		rttr.addFlashAttribute("삭제되었습니다");
+		return "redirect:/admin/item/item_list" + cri.getListLink();
 	}
 	
 }

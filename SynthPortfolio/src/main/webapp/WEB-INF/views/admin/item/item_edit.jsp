@@ -61,34 +61,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <select class="form-control" id="firstCategory">
           <option value="0">1차 카테고리 선택</option>
           <c:forEach items="${firstCategoryList}" var="cgcodeVO">
-              <option value="${cgcodeVO.cg_code }">${cgcodeVO.cg_name } </option>
+              <option value="${categoryVO.cg_code }" ${categoryVO.cg_code == first_category.cg_prtcode? 'selected':''}>${categoryVO.cg_name } </option>
           </c:forEach>
         </select>
       </div>
       <div class="col-sm-3">
         <select class="form-control" id="secondCategory" name="cg_code">
           <option value="">2차 카테고리 선택</option>
+          <c:forEach items="${second_categoryList}" var="categoryVO">
+                     <option value="${categoryVO.cg_code}" ${categoryVO.cg_code == productVO.cg_code ? 'selected' : ''}>${categoryVO.cg_name}</option>
+              </c:forEach>
         </select>
       </div>
     </div>
     <div class="form-group row">
       <label for="title" class="col-sm-2">상품명</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="item_name" id="item_name" placeholder="상품명 입력">
+      	<input type="hidden" name="item_no" value="${itemVO.item_no }">
+        <input type="text" class="form-control" name="item_name" id="item_name" value="${itemVO.item_name }">
       </div>
       <label for="title" class="col-sm-2">상품가격</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="item_price" id="item_price" placeholder="상품가격 입력">
+        <input type="text" class="form-control" name="item_price" id="item_price" value="${itemVO.item_price }">
       </div>
     </div>
     <div class="form-group row">
       <label for="title" class="col-sm-2">할인율</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="item_discount" id="item_discount" placeholder="할인율 입력">
+        <input type="text" class="form-control" name="item_discount" id="item_discount" value="${itemVO.item_discount }">
       </div>
       <label for="title" class="col-sm-2">제조사</label>
       <div class="col-sm-4">
-        <select class="form-control" name="item_manufacture" id="item_manufacture">
+        <select class="form-control" name="item_manufacture" id="item_manufacture" >
           <option value="">----CPU----</option>
           <option value="INTEL">인텔</option>
           <option value="AMD">AMD</option>
@@ -133,35 +137,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="form-group row">
       <label for="title" class="col-sm-2">상품이미지</label>
       <div class="col-sm-4">
-        <input type="file" class="form-control" name="uploadFile" id="uploadFile">
+        <input type="file" class="form-control" name="uploadFile" id="uploadFile" value="${itemVO.item_img }">
       </div>
       <label for="title" class="col-sm-2">미리보기 이미지</label>
       <div class="col-sm-4">
-        <img id="img_preview" style="width:200px; height:200px;">
+        <img src="/admin/item/imageDisplay?dateFolderName=${itemVO.item_up_folder}&fileName=s_${itemVO.item_img}">
       </div>
     </div>
     <div class="form-group row">
       <label for="title" class="col-sm-2">상품 간략 설명</label>
       <div class="col-sm-10">
-        <textarea class="form-control" id="item_short_detail" name="item_short_detail" rows="3"></textarea>
+        <textarea class="form-control" id="item_short_detail" name="item_short_detail" rows="3">${itemVO.item_short_detail}</textarea>
       </div>
     </div>
     <div class="form-group row">
       <label for="title" class="col-sm-2">상품설명</label>
       <div class="col-sm-10">
-        <textarea class="form-control" id="item_content" name="item_content" rows="3"></textarea>
+        <textarea class="form-control" id="item_content" name="item_content" rows="3">${itemVO.item_content}</textarea>
       </div>
     </div>
     <div class="form-group row">
       <label for="title" class="col-sm-2">수량</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="item_amount" id="item_amount" placeholder="수량">
+        <input type="text" class="form-control" name="item_amount" id="item_amount" value="${itemVO.item_amount}">
       </div>
       <label for="title" class="col-sm-2">판매여부</label>
       <div class="col-sm-4">
         <select class="form-control" name="item_buy" id="item_buy">
-          <option value="Y">판매가능</option>
-          <option value="N">판매불가능</option>
+          <option value="Y" ${itemVO.item_buy=='Y'? 'selected':'' }>판매가능</option>
+          <option value="N" ${itemVO.item_buy=='N'? 'selected':'' }>판매불가능</option>
         </select>
       </div>
     </div>
@@ -268,7 +272,7 @@ $(document).ready(function () {
         filebrowserUploadUrl: '/admin/item/imageUpload' 
     }
 
-    CKEDITOR.replace("pro_content", ckeditor_config);
+    CKEDITOR.replace("item_content", ckeditor_config);
     console.log("ckeditor 버전: ", CKEDITOR.version);
     
     // 1차 카테고리 선택

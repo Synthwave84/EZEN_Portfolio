@@ -210,9 +210,23 @@ INSERT INTO ITEM_TBL
 VALUES ('1');
 item_no, cg_code, item_name, item_price, item_discount, item_manufacture, item_content, item_up_folder, item_img, item_amount, item_buy, item_short_detail, item_date, item_updatedate, grade, gen, ram_type, m2, f_factor
 
+SELECT * FROM ITEM_TBL;
 
+CREATE TABLE COMP_OPTION 
+(
+    OPTION_CODE NUMBER NOT NULL,
+    OPTION_NAME VARCHAR2(50) NOT NULL,
+    CG_CODE NUMBER,
+    
+    CONSTRAINT PK_COMP_OPTION PRIMARY KEY(OPTION_CODE),
+    CONSTRAINT FK_COMP_OPTION_CG FOREIGN KEY(CG_CODE) REFERENCES CG_CODE_TBL(CG_CODE)
+);
 
-
-
+INSERT INTO COMP_OPTION
+(
+OPTION_CODE , OPTION_NAME, CG_CODE
+)
+VALUES
+('1','','')
 
 
