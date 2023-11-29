@@ -326,7 +326,7 @@ CREATE TABLE CPU_TBL (
     GRADE               VARCHAR2(30),                       -- COMP_OPTION의 COMP_NAME을 참조
     GEN                 VARCHAR2(30),  
     
-    CONSTRAINT PK_CPU_NO PRIMARY KEY(ITEM_NO),
+    CONSTRAINT PK_TEST_NO PRIMARY KEY(ITEM_NO),
     FOREIGN KEY(CG_CODE) REFERENCES CG_CODE_TBL(CG_CODE),
     FOREIGN KEY(GRADE) REFERENCES COMP_OPTION(COMP_NAME),
     FOREIGN KEY(GEN) REFERENCES COMP_OPTION(COMP_NAME)
@@ -373,5 +373,79 @@ INSERT INTO CPU_TBL
             'INTEL_LGA1151v2'
         );
         
+CREATE TABLE MAINBOARD_TBL (
+    ITEM_NO             NUMBER                  NOT NULL,
+    CG_CODE             NUMBER                  NOT NULL,
+    ITEM_NAME           VARCHAR2(50)            NOT NULL,
+    ITEM_PRICE          NUMBER                  NOT NULL,
+    ITEM_DISCOUNT       NUMBER                  NULL,
+    ITEM_MANUFACTURE    VARCHAR2(50)            NOT NULL,
+    ITEM_CONTENT        VARCHAR2(4000)          NOT NULL,       -- 내용이 4000BYTE 초과여부판단? CLOB
+    ITEM_UP_FOLDER      VARCHAR2(50)            NOT NULL,
+    ITEM_IMG            VARCHAR2(100)           NOT NULL,       -- 날짜폴더경로가 포함하여 파일이름저장
+    ITEM_AMOUNT         NUMBER                  NOT NULL,
+    ITEM_BUY            CHAR(1)                 NOT NULL,       -- 대문자 Y또는 N값.
+    ITEM_SHORT_DETAIL   VARCHAR2(2000)          NULL,
+    ITEM_DATE           DATE DEFAULT SYSDATE    NULL,
+    ITEM_UPDATEDATE     DATE DEFAULT SYSDATE    NULL,
+    GRADE               VARCHAR2(30),                       -- COMP_OPTION의 COMP_NAME을 참조
+    GEN                 VARCHAR2(30),  
+    RAM_TYPE            VARCHAR2(30),
+    M2                  VARCHAR2(30),
+    F_FACTOR            VARCHAR2(30),
+    
+    CONSTRAINT PK_CPU_NO PRIMARY KEY(ITEM_NO),
+    FOREIGN KEY(CG_CODE) REFERENCES CG_CODE_TBL(CG_CODE),
+    FOREIGN KEY(GRADE) REFERENCES COMP_OPTION(COMP_NAME),
+    FOREIGN KEY(GEN) REFERENCES COMP_OPTION(COMP_NAME),
+    FOREIGN KEY(RAM_TYPE) REFERENCES COMP_OPTION(COMP_NAME),
+    FOREIGN KEY(M2) REFERENCES COMP_OPTION(COMP_NAME),
+    FOREIGN KEY(F_FACTOR) REFERENCES COMP_OPTION(COMP_NAME)
+);
+DROP SEQUENCE MAINBOARD_TBL;
+CREATE SEQUENCE SEQ_MAINBOARD_TBL;
 
-
+INSERT INTO ITEM_TBL 
+    (
+        ITEM_NO, 
+        CG_CODE, 
+        ITEM_NAME, 
+        ITEM_PRICE, 
+        ITEM_DISCOUNT, 
+        ITEM_MANUFACTURE, 
+        ITEM_CONTENT, 
+        ITEM_UP_FOLDER, 
+        ITEM_IMG, 
+        ITEM_AMOUNT, 
+        ITEM_BUY, 
+        ITEM_SHORT_DETAIL, 
+        ITEM_DATE, 
+        ITEM_UPDATEDATE, 
+        GRADE, 
+       
+        RAM_TYPE
+      
+     
+    )
+        VALUES 
+        (
+            SEQ_ITEM_TBL.NEXTVAL, 
+            '4',
+            'DDR5 8GB',
+            '10000',
+            '5',
+            'INTEL',
+            '테스트',
+            '1',
+            '1',
+            '1',
+            '1',
+            '1',
+            SYSDATE,
+            SYSDATE,
+            '1',
+            
+            'DDR5'
+           
+      
+        );
