@@ -248,6 +248,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script>
   $(document).ready(function () {
     // ckeditor 환경설정. 자바스크립트 Ojbect문법
+    	$("#grade_opt").hide();
+      	$("#gen_opt").hide();
+      	$("#ram_opt").hide();
+        $("#m2_opt").hide();
+        $("#factor_opt").hide();
+    
       var ckeditor_config = {
           resize_enabled : false,
           enterMode : CKEDITOR.ENTER_BR,

@@ -206,7 +206,7 @@ public class AdminItemController {
 		return "redirect:/admin/item/item_list" + cri.getListLink();
 	}
 	
-	@PostMapping("item_delete")
+	@PostMapping("/item_delete")
 	public String item_delete(Criteria cri, Integer item_no, RedirectAttributes rttr) throws Exception {
 		
 		log.warn("상품코드" + item_no);
@@ -215,5 +215,6 @@ public class AdminItemController {
 		rttr.addFlashAttribute("삭제되었습니다");
 		return "redirect:/admin/item/item_list" + cri.getListLink();
 	}
+	
 	
 }

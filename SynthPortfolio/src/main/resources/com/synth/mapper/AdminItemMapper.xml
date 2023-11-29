@@ -181,21 +181,21 @@
     	SET
     		
 			CG_CODE				= #{cg_code}, 
-			ITEM_NAME, 			= #{item_name}, 
-			ITEM_PRICE, 		= #{item_price}, 
-			ITEM_DISCOUNT, 		= #{item_discount},
-			ITEM_MANUFACTURE, 	= #{item_manufacture},
-			ITEM_CONTENT, 		= #{item_content},
-			ITEM_UP_FOLDER, 	= #{item_up_folder},
-			ITEM_IMG, 			= #{item_img},
-			ITEM_AMOUNT, 		= #{item_amount},
-			ITEM_BUY, 			= #{item_buy},
-			ITEM_SHORT_DETAIL, 	= #{item_short_detail},
-			ITEM_UPDATEDATE, 	= SYSDATE
-			GRADE, 				= #{grade},
-			GEN, 				= #{gen},
-			RAM_TYPE, 			= #{ram_type},
-			M2, 				= #{m2},
+			ITEM_NAME 			= #{item_name}, 
+			ITEM_PRICE 			= #{item_price}, 
+			ITEM_DISCOUNT 		= #{item_discount},
+			ITEM_MANUFACTURE 	= #{item_manufacture},
+			ITEM_CONTENT 		= #{item_content},
+			ITEM_UP_FOLDER 		= #{item_up_folder},
+			ITEM_IMG 			= #{item_img},
+			ITEM_AMOUNT 		= #{item_amount},
+			ITEM_BUY 			= #{item_buy},
+			ITEM_SHORT_DETAIL 	= #{item_short_detail},
+			ITEM_UPDATEDATE 	= SYSDATE,
+			GRADE 				= #{grade},
+			GEN 				= #{gen},
+			RAM_TYPE 			= #{ram_type},
+			M2 					= #{m2},
 			F_FACTOR			= #{f_factor}
 		WHERE
 			ITEM_NO 			= #{item_no}
