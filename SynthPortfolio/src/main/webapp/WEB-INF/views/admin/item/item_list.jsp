@@ -82,7 +82,7 @@
 
                   <!-- jstl 문법작업 -->
                   <!-- forEach문 내부에서는 id를 사용할 수 없다. -->
-                  <c:forEach items="${item_list}" var="itemVO"> <!-- var = ProductVO class 성격이 된다. -->
+                  <c:forEach items="${item_list}" var="itemVO"> <!-- var = itemVO class 성격이 된다. -->
                     <tr>
                       <td><input type="checkbox" name="check" value="${itemVO.item_no}"></td>
                       <td>${itemVO.item_no}</td>

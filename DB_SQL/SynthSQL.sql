@@ -195,6 +195,11 @@ CREATE TABLE ITEM_TBL (
         ITEM_SHORT_DETAIL   VARCHAR2(2000)          NULL,
         ITEM_DATE           DATE DEFAULT SYSDATE    NULL,
         ITEM_UPDATEDATE     DATE DEFAULT SYSDATE    NULL,
+        GRADE               NUMBER                  NULL, 
+        GEN                 VARCHAR2(20 BYTE)       NULL, 
+        RAM_TYPE            VARCHAR2(10 BYTE)       NULL, 
+        M2                  NUMBER                  NULL, 
+        F_FACTOR            VARCHAR2(10 BYTE)       NULL, 
 
         CONSTRAINT  PK_ITEM_NO      PRIMARY KEY(ITEM_NO),
         FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE)
