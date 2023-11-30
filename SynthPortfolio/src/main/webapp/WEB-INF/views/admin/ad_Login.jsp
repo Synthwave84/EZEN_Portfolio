@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>  
 <head>
   <meta charset="utf-8">
@@ -8,30 +8,53 @@
   <title>AdminLTE 2 | Starter</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">  
-
-
-
-<!-- CSS용 부트스트랩 파일 -->
 <%@include file="/WEB-INF//views/admin/comm/plugin1.jsp" %>
-<%@include file="/WEB-INF/views/comm/plugin2.jsp" %>
+<%@include file="/WEB-INF//views/admin/comm/plugin2.jsp" %>
+
 <link rel="stylesheet" href="/css/adLogin.css">
 
 </head>
 <body>
-<div class="container row">
-<form action="/admin/admin_login" method="post">
-  <div class="form-group col-12">
-    <label for="administrator_id">ID</label>
-    <input type="text" class="form-control" id="administrator_id" name="administrator_id" value="admin" placeholder="ID">
-  </div>
-  <div class="form-group col-12">
-    <label for="administrator_pw">Password</label>
-    <input type="password" class="form-control" id="administrator_pw" name="administrator_pw" value="1234" placeholder="pw">
-    <input type="submit" value="로그인">
-  </div>
-  
-</form>
-</div>
+<body>
+<div class="main">
+	<div class="container">
+		<div style="text-align: center;">
+			<div class="middle">
+			
+			<div id="login">
+				<form action="/admin/admin_login" method="post">
+					<fieldset class="clearfix">
+					<p>
+						<span class="fa fa-user"></span>
+						<input type="text"  name="administrator_id" value="admin" Placeholder="Username" required>
+					</p> <!-- JS because of IE support; better: placeholder="Username" -->
+					<p>
+						<span class="fa fa-lock"></span>
+						<input type="password" name="administrator_pw" value="1234" Placeholder="Password" required>
+					</p> <!-- JS because of IE support; better: placeholder="Password" -->
+					<div>
+						<span style="width:48%; text-align:left;  display: inline-block;">
+							<a class="small-text" href="#">Forgot password?</a>
+						</span>
+						<span style="width:50%; text-align:right;  display: inline-block;">
+							<input type="submit" value="Sign In">
+						</span>
+					</div>
+					
+					</fieldset>
+					<div class="clearfix"></div>
+				</form>
+				<div class="clearfix"></div>
+			</div> <!-- end login -->
+			
+			<div class="logo">LOGO
+				<div class="clearfix"></div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
 <%@include file="/WEB-INF/views/comm/plugin.jsp" %>
  <script>
  	$(document).ready(function() {
