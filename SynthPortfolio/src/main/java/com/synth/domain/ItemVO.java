@@ -41,10 +41,10 @@ public class ItemVO {
 		private String  item_short_detail;
 		private Date    item_date;
 		private Date    item_updatedate;
-		private Integer grade;
+		private String 	grade;
 		private String  gen;
 		private String  ram_type;
-		private Integer m2;
+		private String 	m2;
 		private String  f_factor;
 	
 }
