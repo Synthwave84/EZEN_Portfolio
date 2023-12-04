@@ -12,6 +12,7 @@
 	
 </head>
 <body>
+<%@include file="/WEB-INF/views/comm/header.jsp" %>
 	<div class="container">
   <div class="text-center">
     <div class="box box-primary">
