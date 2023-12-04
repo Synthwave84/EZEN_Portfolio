@@ -193,15 +193,15 @@ CREATE TABLE ITEM_TBL (
         ITEM_UP_FOLDER      VARCHAR2(50)            NOT NULL,
         ITEM_IMG            VARCHAR2(100)           NOT NULL,       -- 날짜폴더경로가 포함하여 파일이름저장
         ITEM_AMOUNT         NUMBER                  NOT NULL,
-        ITEM_BUY            CHAR(1)                 NOT NULL,       -- 대문자 Y또는 N값.
+        ITEM_BUY            VARCHAR2(1)             NOT NULL,       -- 대문자 Y또는 N값.
         ITEM_SHORT_DETAIL   VARCHAR2(2000)          NULL,
         ITEM_DATE           DATE DEFAULT SYSDATE    NULL,
         ITEM_UPDATEDATE     DATE DEFAULT SYSDATE    NULL,
-        GRADE               NUMBER                  NULL, 
-        GEN                 VARCHAR2(20 BYTE)       NULL, 
-        RAM_TYPE            VARCHAR2(10 BYTE)       NULL, 
-        M2                  NUMBER                  NULL, 
-        F_FACTOR            VARCHAR2(10 BYTE)       NULL, 
+        GRADE               VARCHAR2(5)             DEFAULT 'N/A',  -- NULL값이 남발되어 DEFAULT ON NULL을 적용코자 하였으나 11G 
+        GEN                 VARCHAR2(20)            DEFAULT 'N/A',  -- 버젼에선 적용할 수 없었음. 
+        RAM_TYPE            VARCHAR2(10)            DEFAULT 'N/A',
+        M2                  VARCHAR2(5)             DEFAULT 'N/A',
+        F_FACTOR            VARCHAR2(10)            DEFAULT 'N/A',
 
         CONSTRAINT  PK_ITEM_NO      PRIMARY KEY(ITEM_NO),
         FOREIGN KEY(CG_CODE)        REFERENCES CG_CODE_TBL(CG_CODE)

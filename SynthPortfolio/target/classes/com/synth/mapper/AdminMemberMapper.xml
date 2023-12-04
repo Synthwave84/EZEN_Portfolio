@@ -9,10 +9,10 @@
 				<trim prefix="OR">
 					<choose>
 						<when test="type == 'I'.toString()">
-							title like '%' || #{keyword} || '%'
+							MEMBER_ID like '%' || #{keyword} || '%'
 						</when>
 						<when test="type == 'N'.toString()">
-							AUTHOR like '%' || #{keyword} || '%'
+							MEMBER_NAME like '%' || #{keyword} || '%'
 						</when>
 					</choose>
 				</trim>

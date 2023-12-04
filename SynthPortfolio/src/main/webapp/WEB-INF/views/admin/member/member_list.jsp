@@ -51,8 +51,8 @@
                 <form action="/admin/member/member_list" method="get">
                   <select name="type">
                     <option selected>검색종류선택</option>
-                    <option value="I" ${pageMaker.cri.type == 'N' ? 'selected' : ''}>회원ID</option>
-                    <option value="N" ${pageMaker.cri.type == 'C' ? 'selected' : ''}>회원이름</option>
+                    <option value="I" ${pageMaker.cri.type == 'I' ? 'selected' : ''}>회원ID</option>
+                    <option value="N" ${pageMaker.cri.type == 'N' ? 'selected' : ''}>회원이름</option>
                   </select>
                   <input type="text" name="keyword" value="${pageMaker.cri.keyword}" />
                   <!-- 검색한 데이터 출력을 위해 pageNum과 amount 값을 필요로 한다. -->
@@ -102,8 +102,7 @@
             <div class="box-footer clearfix">
               <div class="row">
                 <div class="col-md-2">
-                  <button class="btn btn-primary" id="btn_checked_item_modifier" role="button">체크상품수정1</button>
-                 
+                  
                   <!-- 1) 페이지번호 클릭시 사용 [이전] 1 2 3 4 5 [다음], action="/admin/product/list"-->
                   <!-- 2) 목록에서 제목 클릭시 사용, actionForm.setAttribute("action", "/admin/product/get");-->
                   <form id="actionForm" action="" method="get">
@@ -140,9 +139,6 @@
                       </c:if>
                     </ul>
                   </nav>
-                </div>
-                <div class="col-md-2 text-right">
-                  <button class="btn btn-primary" id="btn_item_insert" role="button">상품등록</button>
                 </div>
                   
                 </div>

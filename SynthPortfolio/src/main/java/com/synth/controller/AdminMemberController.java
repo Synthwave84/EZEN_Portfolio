@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.synth.domain.BoardVO;
 import com.synth.domain.Criteria;
 import com.synth.domain.MemberVO;
 import com.synth.dto.PageDTO;
