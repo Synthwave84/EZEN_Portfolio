@@ -37,6 +37,7 @@
 	    </script>
   </head>
   <body>
+  <%@include file="/WEB-INF/views/comm/header.jsp" %>
     
 
 <div class="container">
