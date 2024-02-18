@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F47F0CB8-3F5A-441F-0737-34A00BAB5143" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="OPTION_CG">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>OPTION_CG</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OPTION_CG_ID" id="C47255E7-A6C4-4FD1-ABB2-FB8EB06CD78C">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>OPTION_CG</sourceObjSchema>
+<sourceObjName>OPTION_CG_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPTION_TYPE_ID" id="49409C49-3FF0-F147-AC98-E10BE831DBA9">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>OPTION_CG</sourceObjSchema>
+<sourceObjName>OPTION_TYPE_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D336FF15-A27C-8AD0-4989-BEF4DE18C54D" referredColumn="E6B00DC8-F7AD-1F85-9C67-49A46D13742A"/>
+</associations>
+</Column>
+<Column name="OPTION_CG_NAME" id="5723530F-36B8-4FF4-A823-DB8901C81AEE">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>OPTION_CG</sourceObjSchema>
+<sourceObjName>OPTION_CG_NAME</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8696F2E7-1C9F-8FA3-3907-A139D670737F" name="OPTION_CG_ID">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>OPTION_CG_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C47255E7-A6C4-4FD1-ABB2-FB8EB06CD78C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7E06745-F14D-22D5-E52E-2D84E97EA0B1" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="OPTION_CG_ID">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>OPTION_CG_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C47255E7-A6C4-4FD1-ABB2-FB8EB06CD78C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5E956956-295C-1F46-774E-06651183488F" name="SYS_C008003">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:36 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49409C49-3FF0-F147-AC98-E10BE831DBA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

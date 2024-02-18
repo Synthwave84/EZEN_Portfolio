@@ -21,18 +21,15 @@ public class ItemVO {
         ITEM_SHORT_DETAIL   VARCHAR2(2000)          NULL,
         ITEM_DATE           DATE DEFAULT SYSDATE    NULL,
         ITEM_UPDATEDATE     DATE DEFAULT SYSDATE    NULL,
-        GRADE               NUMBER                  NULL,
-        GEN                 VARCHAR2(20)            NULL,
-        RAM_TYPE            VARCHAR2(10)            NULL,
-        M2                  NUMBER            		NULL,
-        F_FACTOR            VARCHAR2(10)            NULL,   
+        
 */
 		private Integer item_no;
+		private String 	item_uuid;
 		private Integer cg_code;
 		private String  item_name;
 		private Integer item_price;
 		private Integer item_discount;
-		private String  item_manufacture;
+		private Integer item_manufacture;
 		private String  item_content;
 		private String  item_up_folder;
 		private String  item_img;
@@ -41,10 +38,6 @@ public class ItemVO {
 		private String  item_short_detail;
 		private Date    item_date;
 		private Date    item_updatedate;
-		private String 	grade;
-		private String  gen;
-		private String  ram_type;
-		private String 	m2;
-		private String  f_factor;
+		
 	
 }

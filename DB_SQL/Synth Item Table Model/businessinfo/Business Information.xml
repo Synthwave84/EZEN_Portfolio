@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="8239027D-06D5-61D2-80FC-EFEEC33CC6BF">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:29:26 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

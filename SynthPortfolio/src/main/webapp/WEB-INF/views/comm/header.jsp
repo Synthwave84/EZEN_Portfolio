@@ -22,7 +22,7 @@
       <a class="p-2 text-dark" href="/member/join">가입</a>
       <a class="p-2 text-dark" href="#">Order</a>
       <a class="p-2 text-dark" href="/user/cart/cart_list">Cart</a>
-      <a class="p-2 text-dark" href="/admin/intro">관리자</a>
+      <a class="p-2 text-dark" href="/admin/login">관리자</a>
       </c:if>
       
       

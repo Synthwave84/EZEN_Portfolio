@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.synth.domain.CgcodeVO;
+import com.synth.domain.ItemManufactureVO;
 import com.synth.service.CategoryService;
 
 import lombok.RequiredArgsConstructor;
@@ -45,5 +48,27 @@ public class CategoryController {
 		
 		return entity;
 	}
+	
+	@ModelAttribute
+	public void getManufactureList(Integer cg_code, Model model) {
+		
+		log.info("제품목록");
+		List<ItemManufactureVO> manufactureList = categoryService.getManufacture(cg_code);
+		model.addAttribute("manufactureList", manufactureList);
+	}
+	
+	@ResponseBody
+	@GetMapping("/manufactureCode/{cg_code}")
+	public ResponseEntity <List<ItemManufactureVO>> manufacture(@PathVariable("cg_code")Integer cg_code) {
+		
+		log.info("선택된 카테고리 번호" + cg_code);
+		
+		ResponseEntity <List<ItemManufactureVO>> entity = null;
+		
+		entity = new ResponseEntity<List<ItemManufactureVO>>
+		(categoryService.getManufacture(cg_code),HttpStatus.OK);
+		
+		return entity;
+	};
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.synth.domain.CgcodeVO;
+import com.synth.domain.ItemManufactureVO;
 import com.synth.mapper.CategoryMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,12 @@ public class CategoryServiceImpl implements CategoryService {
 	public CgcodeVO get(Integer cg_code) {
 		// TODO Auto-generated method stub
 		return categoryMapper.get(cg_code);
+	}
+
+	@Override
+	public List<ItemManufactureVO> getManufacture(Integer cg_code) {
+		
+		return categoryMapper.getManufacture(cg_code);
 	}
 	
 	

@@ -1,0 +1,265 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="21B4141F-AE98-3958-AFF5-7FF82B5A1B97" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="ITEM_TBL">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>ITEM_TBL</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ITEM_NO" id="D18926A4-B883-175A-CCB0-08B75436AAB5">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_NO</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CG_CODE" id="6E59CF3C-F610-EAE7-330B-527B2FBB941E">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>CG_CODE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A6EF609-D35F-552E-88D6-222DBDF71C91" referredColumn="3BAAA9FA-7531-B8DC-1B74-DD82BB4C51E5"/>
+</associations>
+</Column>
+<Column name="ITEM_NAME" id="3EF99084-F896-55AE-9770-03C3AD155C01">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_NAME</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_PRICE" id="4315C4D5-315B-EF92-6DBD-596F8015AA22">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_PRICE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_DISCOUNT" id="AEDCCDB0-C426-D083-D12B-F73726BBFF80">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_DISCOUNT</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_MANUFACTURE" id="135987AE-24A4-BC68-B8D3-B1388CE737F9">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_MANUFACTURE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="252FB0CE-C13B-80CA-CFF0-A9710964BACB" referredColumn="EE43B4A6-A2B3-E318-2BB5-D36721EBC489"/>
+</associations>
+</Column>
+<Column name="ITEM_CONTENT" id="04ED31A3-B66B-1CFD-F0E8-6774A278233B">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_CONTENT</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000 BYTE</dataTypeSize>
+<ownDataTypeParameters>4000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_UP_FOLDER" id="8A703D19-8C45-4879-2594-20F30A168E11">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_UP_FOLDER</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_IMG" id="D94A03AC-2F45-F289-6028-01DC779F02AB">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_IMG</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_AMOUNT" id="5379544B-BF02-098D-D314-A2365330E429">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_AMOUNT</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_BUY" id="4D932404-6841-1351-8A59-AB6A3E47792A">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_BUY</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_SHORT_DETAIL" id="AF450165-9E0F-801F-4BC4-1C720F439250">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_SHORT_DETAIL</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000 BYTE</dataTypeSize>
+<ownDataTypeParameters>2000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_DATE" id="EBF5CFC8-AE92-A20D-C9AE-CF582470A7A3">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_DATE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ITEM_UPDATEDATE" id="D28FDCF6-F3BA-399A-180E-8F10F0714B65">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_TBL</sourceObjSchema>
+<sourceObjName>ITEM_UPDATEDATE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="25830CA9-90C3-0C78-A6F5-99B1FDE7B269" name="PK_ITEM_NO">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>PK_ITEM_NO</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D18926A4-B883-175A-CCB0-08B75436AAB5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9BAEE757-D1EB-3137-2F83-3BB14DAAC53E" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="PK_ITEM_NO">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>PK_ITEM_NO</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D18926A4-B883-175A-CCB0-08B75436AAB5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA53378F-E02F-1864-F224-F3776DC64F5B" name="SYS_C008024">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E59CF3C-F610-EAE7-330B-527B2FBB941E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D809C0B2-A983-4D40-8959-6C90B84617A9" name="SYS_C008025">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="135987AE-24A4-BC68-B8D3-B1388CE737F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

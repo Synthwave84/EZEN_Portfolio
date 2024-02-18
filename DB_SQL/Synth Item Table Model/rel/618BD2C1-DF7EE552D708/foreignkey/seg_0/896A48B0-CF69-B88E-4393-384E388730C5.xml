@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="896A48B0-CF69-B88E-4393-384E388730C5" containerWithKeyObject="DDD47CEC-501D-61EA-4A90-E1585673D9C6" localFKIndex="0031928B-C513-5FEB-A08E-19692B88028A" name="SYS_C007957">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>SYS_C007957</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<referredTableLongName>SYNTHWAVE.CG_CODE_TBL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DDD47CEC-501D-61EA-4A90-E1585673D9C6</referredTableID>
+<keyObject>BBF12536-409A-4713-B5F9-E15B57AF61F9</keyObject>
+<referredKeyID>BBF12536-409A-4713-B5F9-E15B57AF61F9</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CG_CODE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

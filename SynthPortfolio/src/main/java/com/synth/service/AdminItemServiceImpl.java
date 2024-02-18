@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.synth.domain.Criteria;
+import com.synth.domain.ItemOptionVO;
 import com.synth.domain.ItemVO;
 import com.synth.mapper.AdminItemMapper;
 
@@ -19,6 +20,20 @@ public class AdminItemServiceImpl implements AdminItemService {
 	public void item_insert(ItemVO vo) {
 		adminItemMapper.item_insert(vo);
 	}
+	
+	@Override
+	public void item_option_insert(
+			ItemOptionVO op_vo, 
+			List<Integer> option_type_id_arr, 
+			List<Integer> option_cg_id_arr,
+			List<Integer> option_id_arr) {
+		
+		for(int i=0; i<option_type_id_arr.size(); i++) {
+			adminItemMapper.item_option_insert(option_type_id_arr.get(i), option_cg_id_arr.get(i), option_id_arr.get(i), op_vo);
+		}
+		
+	}
+	
 
 	@Override
 	public List<ItemVO> item_list(Criteria cri) {
@@ -58,6 +73,12 @@ public class AdminItemServiceImpl implements AdminItemService {
 		adminItemMapper.item_delete(item_no);
 		
 	}
+
+
+
+	
+
+	
 
 
 	

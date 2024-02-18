@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="SYNTHWAVE" directorySegmentName="seg_0" id="150F5588-B16A-6566-6980-5EFBD763AECB">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</SchemaObject>

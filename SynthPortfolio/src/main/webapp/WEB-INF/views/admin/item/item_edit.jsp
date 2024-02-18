@@ -421,7 +421,88 @@ $(document).ready(function () {
         break;
     }
   });
+      
+      function selectCategory() {
+  	    // 스위치 문을 사용하여 1차 카테고리에 따라 다른 셀렉트 태그를 보여주거나 숨김
+  	    let selectedCategory = $("#firstCategory").val(); 
+  	   
+  	    switch (selectedCategory) {
 
+  	      case "0": 
+  	        $("#grade_opt").hide();
+  	      $("#gen_opt").hide();
+  	      $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	          
+  	        break;
+  	      case "1":
+  	        $("#grade_opt").show();
+  	        $("#gen_opt").show();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "2":
+  	        $("#grade_opt").show();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "3":
+  	        $("#grade_opt").show();
+  	        $("#gen_opt").show();
+  	        $("#ram_opt").show();
+  	        $("#m2_opt").show();
+  	          $("#factor_opt").show();
+  	        break;
+  	      case "4":
+  	        $("#grade_opt").hide();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").show();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "5":
+  	        $("#grade_opt").show();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "6":
+  	        $("#grade_opt").hide();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "7":
+  	        $("#grade_opt").show();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").show();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	      case "8":
+  	        $("#grade_opt").hide();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").show();
+  	        break;
+  	      case "9":
+  	        $("#grade_opt").hide();
+  	        $("#gen_opt").hide();
+  	        $("#ram_opt").hide();
+  	        $("#m2_opt").hide();
+  	          $("#factor_opt").hide();
+  	        break;
+  	    }
+    };
+	
+    selectCategory();      
 });
 
   

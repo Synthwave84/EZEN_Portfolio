@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="71E01504-A02F-95A6-4488-8F4CDA47D2DB" mainViewID="1D0E9C8F-0914-1852-C7DF-94073244FB43">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:29:26 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

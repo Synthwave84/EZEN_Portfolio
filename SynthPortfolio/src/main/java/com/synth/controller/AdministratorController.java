@@ -25,14 +25,14 @@ public class AdministratorController {
 	
 	@GetMapping("/admin/login")
 	public String adminLogin() {
-	log.info("괸리자 로그인 페이지");
+	log.info("관리자 로그인 페이지");
 	return "/admin/ad_Login";
 	}
-	
+
 //	관리자 로그인 인증
 	@PostMapping("/admin_login") 
 		public String admin_login(AdminVO vo, HttpSession session, RedirectAttributes rttr) throws Exception {
-		
+
 			log.info("관리자로그인:" + vo);
 		
 		AdminVO db_vo = administratorService.admin_login(vo.getAdministrator_id());

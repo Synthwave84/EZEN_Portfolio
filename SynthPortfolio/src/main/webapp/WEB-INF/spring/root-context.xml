@@ -40,6 +40,8 @@
 	<!-- mybatis-spring, mybatis 라이브러리를 이용한 설정작업 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
+		<!-- src/main/resources/mybatis-config.xml -->
+      <property name="configLocation" value="classpath:mybatis-config.xml" />
 	</bean>
 	
 	<!-- service 패키지 -->

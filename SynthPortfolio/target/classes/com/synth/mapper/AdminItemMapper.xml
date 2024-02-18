@@ -7,8 +7,9 @@
 	INSERT INTO
 			ITEM_TBL 
 			(
-				ITEM_NO, 
-				CG_CODE, 
+				ITEM_NO,
+				ITEM_UUID, 
+				CG_CODE,
 				ITEM_NAME, 
 				ITEM_PRICE, 
 				ITEM_DISCOUNT, 
@@ -20,16 +21,12 @@
 				ITEM_BUY, 
 				ITEM_SHORT_DETAIL, 
 				ITEM_DATE, 
-				ITEM_UPDATEDATE, 
-				GRADE, 
-				GEN, 
-				RAM_TYPE, 
-				M2, 
-				F_FACTOR
+				ITEM_UPDATEDATE
 			)
 			VALUES
 				(
 					SEQ_ITEM_TBL.NEXTVAL, 
+					#{item_uuid},
 					#{cg_code},
 					#{item_name},
 					#{item_price},
@@ -42,13 +39,29 @@
 					#{item_buy},
 					#{item_short_detail},
 					SYSDATE,
-					SYSDATE,
-					#{grade},
-					#{gen},
-					#{ram_type},
-					#{m2},
-					#{f_factor}
+					SYSDATE
 				)
+</insert>
+<insert id="item_option_insert" parameterType="Map">
+INSERT INTO
+	ITEM_OPTION
+	(
+		ITEM_OPTION_ID,
+		ITEM_UUID,
+		OPTION_TYPE_ID,
+		OPTION_CG_ID,
+		OPTION_ID
+	)
+	VALUES
+		(
+			SEQ_ITEM_OPTION.NEXTVAL,
+			#{item_uuid},
+			#{option_type_id},
+			#{option_cg_id},
+			#{option_id}
+		)
+
+
 </insert>
 <sql id="criteria">
     <!-- prefixOverrides : 실행될 쿼리의 <trim> 문 안에 쿼리 가장 앞에 해당하는 문자들이 있으면 자동으로 지워준다 -->
@@ -57,13 +70,13 @@
              <trim prefix="OR">
                 <choose>
                    <when test="type == 'N'.toString()">
-                      PRO_NAME like '%' || #{keyword} || '%'
+                      ITEM_NAME like '%' || #{keyword} || '%'
                    </when>
                    <when test="type == 'C'.toString()">
-                      PRO_NUM like '%' || #{keyword} || '%'
+                      ITEM_NO like '%' || #{keyword} || '%'
                    </when>
                    <when test="type == 'P'.toString()">
-                      PRO_PUBLISHER like '%' || #{keyword} || '%'
+                      ITEM_MANUFACTURE like '%' || #{keyword} || '%'
                    </when>
                 </choose>
              </trim>
@@ -76,6 +89,7 @@
       <![CDATA[
       SELECT
          	ITEM_NO, 
+         	ITEM_UUID,
 			CG_CODE, 
 			ITEM_NAME, 
 			ITEM_PRICE, 
@@ -88,17 +102,13 @@
 			ITEM_BUY, 
 			ITEM_SHORT_DETAIL, 
 			ITEM_DATE, 
-			ITEM_UPDATEDATE, 
-			GRADE, 
-			GEN, 
-			RAM_TYPE, 
-			M2, 
-			F_FACTOR
+			ITEM_UPDATEDATE
       FROM (
 	            SELECT 
 	            /*+INDEX_DESC(PRODUCT_TBL PK_ITEM_NO) */
 	            ROWNUM RN, 
 	            ITEM_NO, 
+	            ITEM_UUID,
 				CG_CODE, 
 				ITEM_NAME, 
 				ITEM_PRICE, 
@@ -111,12 +121,7 @@
 				ITEM_BUY, 
 				ITEM_SHORT_DETAIL, 
 				ITEM_DATE, 
-				ITEM_UPDATEDATE, 
-				GRADE, 
-				GEN, 
-				RAM_TYPE, 
-				M2, 
-				F_FACTOR
+				ITEM_UPDATEDATE
    		FROM 
       		ITEM_TBL
         WHERE
@@ -152,6 +157,7 @@
     <select id="item_edit" resultType="com.synth.domain.ItemVO">
     	SELECT
     		ITEM_NO, 
+    		ITEM_UUID,
 			CG_CODE, 
 			ITEM_NAME, 
 			ITEM_PRICE, 
@@ -164,12 +170,7 @@
 			ITEM_BUY, 
 			ITEM_SHORT_DETAIL, 
 			ITEM_DATE, 
-			ITEM_UPDATEDATE, 
-			GRADE, 
-			GEN, 
-			RAM_TYPE, 
-			M2, 
-			F_FACTOR
+			ITEM_UPDATEDATE
 		FROM 
 			ITEM_TBL
 		WHERE
@@ -191,12 +192,7 @@
 			ITEM_AMOUNT 		= #{item_amount},
 			ITEM_BUY 			= #{item_buy},
 			ITEM_SHORT_DETAIL 	= #{item_short_detail},
-			ITEM_UPDATEDATE 	= SYSDATE,
-			GRADE 				= #{grade},
-			GEN 				= #{gen},
-			RAM_TYPE 			= #{ram_type},
-			M2 					= #{m2},
-			F_FACTOR			= #{f_factor}
+			ITEM_UPDATEDATE 	= SYSDATE
 		WHERE
 			ITEM_NO 			= #{item_no}
     </update>

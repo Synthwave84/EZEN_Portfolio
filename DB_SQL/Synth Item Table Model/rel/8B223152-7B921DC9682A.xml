@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="8B223152-C6B1-8C95-0CA3-7B921DC9682A" mainViewID="6EBC32FE-E32B-12F8-7440-4AE280E4AF83">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:29:26 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

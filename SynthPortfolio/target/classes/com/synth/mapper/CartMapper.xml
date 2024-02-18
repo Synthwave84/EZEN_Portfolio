@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.synth.mapper.CartMapper">
+<insert id="cart_add" parameterType="com.synth.domain.CartVO">
+MERGE INTO 
+	CART_TAB
+USING 
+	DUAL
+ON (
+	MEMBER_ID = #{member_id} 
+AND 
+	ITEM_NO = #{item_no}
+	)
+WHEN MATCHED THEN
+    UPDATE
+        SET 
+        		CART_AMOUNT = CART_AMOUNT + #{cart_amount}
+WHEN NOT MATCHED THEN
+	    INSERT
+	    (
+	    		CART_NO, 
+	    		ITEM_NO, 
+	    		MEMBER_ID, 
+	    		CART_AMOUNT
+	    	)
+		VALUES
+		(
+			SEQ_CART_TAB.NEXTVAL,
+			#{item_no},
+			#{member_id},
+			#{cart_amount}
+		)
+</insert>
+<select id="cart_list" resultType="com.synth.dto.CartDTOList">
+SELECT 
+    C.CART_NO, 
+    C.ITEM_NO, 
+    C.CART_AMOUNT,
+    		I.ITEM_NAME, 
+    		I.ITEM_PRICE, 
+    		I.ITEM_UP_FOLDER, 
+    		I.ITEM_IMG,
+    		I.ITEM_DISCOUNT
+FROM 
+    ITEM_TBL I INNER JOIN CART_TAB C
+ON  
+    I.ITEM_NO = C.ITEM_NO
+WHERE 
+    C.MEMBER_ID = #{member_id}
+		
+</select>
+<update id="cart_amount_change" parameterType="map">
+UPDATE
+	CART_TAB
+SET
+	CART_AMOUNT = #{cart_amount}
+WHERE
+	CART_NO = #{cart_no}
+
+</update>
+<delete id="cart_list_del" parameterType="Long">
+	
+	DELETE FROM
+		CART_TAB
+	WHERE
+		CART_NO = #{cart_no}			
+</delete>
+ <delete id="cart_sel_delete">
+   <!--  파라미터로 List컬렉션이 사용될 경우에는 mybatis 구문에서는 collection="list" 사용해야 함. -->
+      DELETE FROM 
+         CART_TAB
+      WHERE
+         CART_NO IN
+  <foreach collection="list" item="cart_code" open="(" close=")" separator=",">
+         #{cart_no}
+</foreach>
+   
+   </delete>
+
+
+
+</mapper>

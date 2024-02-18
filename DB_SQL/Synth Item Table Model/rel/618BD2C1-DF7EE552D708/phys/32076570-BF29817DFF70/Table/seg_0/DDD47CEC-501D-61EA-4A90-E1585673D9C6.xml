@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CG_CODE_TBL" directorySegmentName="seg_0" id="DDD47CEC-501D-61EA-4A90-E1585673D9C6">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4A79E7AC-DF8C-F6CC-2735-F204E64B0A85</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CG_CODE" id="3BAAA9FA-7531-B8DC-1B74-DD82BB4C51E5">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CG_NAME" id="458DF4B1-8DE3-9960-3255-425F48C00B31">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CG_PRTCODE" id="EC946792-AB77-22C9-2284-0A752711F38F">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007957" id="0031928B-C513-5FEB-A08E-19692B88028A">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CG_CODE_TBL_PK" id="BBF12536-409A-4713-B5F9-E15B57AF61F9">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<segment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+<indexSegment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="CG_CODE_TBL_CG_NAME_UN" id="EA057AF2-6E66-468D-F164-2071583227DC">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<segment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+<indexSegment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

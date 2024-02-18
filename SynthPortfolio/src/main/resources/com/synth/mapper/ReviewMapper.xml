@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.synth.mapper.ReviewMapper">
+	<insert id="review_insert" parameterType="com.synth.domain.ReviewVO">
+	INSERT INTO
+		REVIEW_TAB
+		(
+			REV_NUM,
+			MEMBER_ID,
+			ITEM_NO,
+			REV_CONTENT,
+			REV_SCORE
+		)
+			VALUES
+	        (
+	        	SEQ_REV_TAB.NEXTVAL, 
+	        	#{member_id}, 
+	        	#{item_no}, 
+	        	#{rev_content}, 
+	        	#{rev_score}
+	        )
+	</insert>
+	<select id="list" parameterType="map" resultType="com.synth.domain.ReviewVO">
+	<!-- 
+		CDATA -> XML에선 특수문자를 그냥 읽으면 문제가 되는데, XML에서 데이터로써 사용할 수 있도록 사용해준다.
+		즉 XML문법으로 해석하지 말라는 것.
+	 -->
+    <![CDATA[
+      SELECT
+         REV_NUM, 
+         MEMBER_ID, 
+         ITEM_NO, 
+         REV_CONTENT, 
+         REV_SCORE, 
+         REV_REGDATE
+      FROM 
+      		(
+            SELECT 
+            	/*+INDEX_DESC(REVIEW_TAB PK_REVIEW_TAB) */
+               	ROWNUM RN, 
+               	REV_NUM, 
+                MEMBER_ID, 
+                ITEM_NO, 
+                REV_CONTENT, 
+                REV_SCORE, 
+                REV_REGDATE
+            FROM 
+                REVIEW_TAB
+            WHERE
+            		item_no = #{item_no}
+            	AND
+     		    ROWNUM <= #{cri.pageNum} * #{cri.amount}
+          	)
+      WHERE RN > (#{cri.pageNum} -1) * #{cri.amount}
+    ]]>
+	</select>
+	
+	<select id="listCount" parameterType="Integer" resultType="int">
+	SELECT
+		COUNT(*)
+	FROM
+		REVIEW_TAB
+	WHERE
+		ITEM_NO = #{item_no}
+	</select>
+	<update id="review_modify" parameterType="com.synth.domain.ReviewVO">
+		UPDATE
+			REVIEW_TAB
+		SET
+			REV_CONTENT = #{rev_content}, 
+			REV_SCORE = #{rev_score}
+		WHERE
+			REV_NUM = #{rev_num} 
+	</update>
+	<delete id="delete" parameterType="Long">
+	
+	DELETE FROM
+		REVIEW_TBL
+	WHERE
+		REV_NUM = #{rev_num}	
+		
+	</delete>
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="SYNTHWAVE" directorySegmentName="seg_0" id="6BD4162F-38F7-A67B-A60B-85B949DB2243">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjName>SYNTHWAVE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<defTableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</defTableSpace>
+<privileges>UNLIMITED TABLESPACE</privileges>
+</UserOraclev10g>

@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDD47CEC-501D-61EA-4A90-E1585673D9C6" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="CG_CODE_TBL">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>CG_CODE_TBL</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CG_CODE" id="3BAAA9FA-7531-B8DC-1B74-DD82BB4C51E5">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>CG_CODE_TBL</sourceObjSchema>
+<sourceObjName>CG_CODE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CG_PRTCODE" id="EC946792-AB77-22C9-2284-0A752711F38F">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>CG_CODE_TBL</sourceObjSchema>
+<sourceObjName>CG_PRTCODE</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="896A48B0-CF69-B88E-4393-384E388730C5" referredColumn="3BAAA9FA-7531-B8DC-1B74-DD82BB4C51E5"/>
+</associations>
+</Column>
+<Column name="CG_NAME" id="458DF4B1-8DE3-9960-3255-425F48C00B31">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>CG_CODE_TBL</sourceObjSchema>
+<sourceObjName>CG_NAME</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40 BYTE</dataTypeSize>
+<ownDataTypeParameters>40 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BBF12536-409A-4713-B5F9-E15B57AF61F9" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="CG_CODE_TBL_PK">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>SYS_C007955</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BAAA9FA-7531-B8DC-1B74-DD82BB4C51E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA057AF2-6E66-468D-F164-2071583227DC" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="CG_CODE_TBL_CG_NAME_UN">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>SYS_C007956</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="458DF4B1-8DE3-9960-3255-425F48C00B31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0031928B-C513-5FEB-A08E-19692B88028A" name="SYS_C007957">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:30:40 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC946792-AB77-22C9-2284-0A752711F38F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.synth.mapper.ItemOptionMapper">
+<select id="getOptionList" resultType="com.synth.dto.ItemOptionDTOList">
+	SELECT 
+	        OT.OPTION_TYPE_ID,
+	        OT.OPTION_TYPE_NAME,
+	        OCG.OPTION_CG_ID,
+	        OCG.OPTION_CG_NAME,
+	        OV.OPTION_ID,
+	        OV.OPTION_VALUE
+	FROM 
+		OPTION_TYPE OT
+			JOIN 
+				OPTION_CG OCG 
+				ON OT.OPTION_TYPE_ID = OCG.OPTION_TYPE_ID
+			JOIN 	
+					OPTION_VALUE OV ON 
+					OT.OPTION_TYPE_ID = OV.OPTION_TYPE_ID AND 
+					OCG.OPTION_CG_ID = OV.OPTION_CG_ID
+	
+</select>
+<select id="getOptionType" resultType="com.synth.domain.OptionTypeVO">
+	SELECT
+		OPTION_TYPE_ID,
+		OPTION_TYPE_NAME
+	FROM
+		OPTION_TYPE
+</select>
+<select id="getOptionCg" resultType="com.synth.dto.ItemOptionDTOList">
+	SELECT 
+	        OT.OPTION_TYPE_ID,
+	        OT.OPTION_TYPE_NAME,
+	        OCG.OPTION_CG_ID,
+	        OCG.OPTION_CG_NAME
+	FROM
+		OPTION_TYPE OT
+			JOIN 
+				OPTION_CG OCG 
+				ON OT.OPTION_TYPE_ID = OCG.OPTION_TYPE_ID
+	WHERE
+		OT.OPTION_TYPE_ID = #{option_type_id}
+</select>
+<select id="getOptionValue" resultType="com.synth.dto.ItemOptionDTOList">
+	SELECT
+			OCG.OPTION_CG_ID,
+	        OCG.OPTION_CG_NAME,
+	        OV.OPTION_ID,
+	        OV.OPTION_VALUE
+	FROM
+		OPTION_CG OCG
+			JOIN 
+				OPTION_VALUE OV
+			ON
+				OCG.OPTION_CG_ID = OV.OPTION_CG_ID
+	WHERE
+		OCG.OPTION_CG_ID = #{option_cg_id}
+</select>
+
+
+
+</mapper>

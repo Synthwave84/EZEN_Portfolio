@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DC7C259F-057C-CA42-CE9F-D7F27C4ADA11" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="ITEM_OPTION">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>ITEM_OPTION</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ITEM_NO" id="0266D641-F40D-7A5F-BF06-03163188BC70">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_OPTION</sourceObjSchema>
+<sourceObjName>ITEM_NO</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2428F05B-B070-F984-726D-95ADB8E051E2" referredColumn="D18926A4-B883-175A-CCB0-08B75436AAB5"/>
+</associations>
+</Column>
+<Column name="OPTION_TYPE_ID" id="45359F4B-BC98-B2B6-5D36-4CC51512573B">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_OPTION</sourceObjSchema>
+<sourceObjName>OPTION_TYPE_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="776F9D68-BB0C-CA22-A48C-29EC04CD55AA" referredColumn="E6B00DC8-F7AD-1F85-9C67-49A46D13742A"/>
+</associations>
+</Column>
+<Column name="OPTION_CG_ID" id="2E958B62-0E47-6F07-A055-B0E5F8DC050C">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_OPTION</sourceObjSchema>
+<sourceObjName>OPTION_CG_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47909216-1F99-006C-3448-1ED0C5A0A8DE" referredColumn="C47255E7-A6C4-4FD1-ABB2-FB8EB06CD78C"/>
+</associations>
+</Column>
+<Column name="OPTION_ID" id="75298E86-21B2-710F-BB32-C1A2CBA6DBC5">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>ITEM_OPTION</sourceObjSchema>
+<sourceObjName>OPTION_ID</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="82E57691-D26D-DCF8-8C7B-92CE501E8B08" referredColumn="9635A0C4-85DF-D9A5-58A2-8F050B01D8D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="39909C9E-B976-17C1-C229-5F5B170CA401" schemaObject="150F5588-B16A-6566-6980-5EFBD763AECB" name="ITEM_OPTION_PK">
+<sourceConnName>SYNTHWAVE</sourceConnName>
+<sourceObjSchema>SYNTHWAVE</sourceObjSchema>
+<sourceObjName>SYS_C008027</sourceObjName>
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0266D641-F40D-7A5F-BF06-03163188BC70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D3C69F44-3A9A-6FC1-7C41-81E8B0D7A2B8" name="SYS_C008028">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0266D641-F40D-7A5F-BF06-03163188BC70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75C4CB5F-0C16-E6A4-3EC7-1BA95A374C4A" name="SYS_C008029">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45359F4B-BC98-B2B6-5D36-4CC51512573B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32207B82-C1D7-8B54-39A8-E030E45F1F1C" name="SYS_C008030">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E958B62-0E47-6F07-A055-B0E5F8DC050C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D19AFCCC-267A-F55E-B1F8-A402C2D780F8" name="SYS_C008031">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:32:06 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75298E86-21B2-710F-BB32-C1A2CBA6DBC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

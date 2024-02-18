@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.synth.domain.CgcodeVO;
 import com.synth.domain.Criteria;
+import com.synth.domain.ItemOptionVO;
 import com.synth.domain.ItemVO;
 import com.synth.dto.PageDTO;
 import com.synth.service.AdminItemService;
@@ -59,16 +61,28 @@ public class AdminItemController {
 	}
 	
 	@PostMapping("/item_insert")
-	public String item_insert(ItemVO vo, MultipartFile uploadFile, RedirectAttributes rttr) {
+	public String item_insert(
+			ItemOptionVO op_vo,ItemVO vo, MultipartFile uploadFile, RedirectAttributes rttr,
+			@RequestParam("option_type_id_arr[]") List<Integer> option_type_id_arr,
+			@RequestParam("option_cg_id_arr[]") List<Integer> option_cg_id_arr,
+			@RequestParam("option_id_arr[]") List<Integer> option_id_arr
+			) {
 		String dateFolder = FileUtils.getDateFolder();
 		String savedFileName= FileUtils.uploadFile(uploadPath, dateFolder, uploadFile);
 		
+		String uuid = UUID.randomUUID().toString();
+		
+		vo.setItem_uuid(uuid);
+		op_vo.setItem_uuid(uuid);
+				
 		vo.setItem_img(savedFileName);
 		vo.setItem_up_folder(dateFolder);
 		
 		log.info("상품정보 :" + vo);
+		log.info("들어간 정보 :" + op_vo);
 		
 		adminItemService.item_insert(vo);
+		adminItemService.item_option_insert(op_vo, option_type_id_arr, option_cg_id_arr, option_id_arr);
 		return "redirect:/admin/item/item_list";
 	}
 	

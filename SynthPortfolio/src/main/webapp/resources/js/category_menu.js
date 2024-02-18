@@ -12,7 +12,7 @@ $(document).ready(function() {
     // console.log("1차 카테고리 코드" + cg_code);
     // return;
 
-    let url = 'common/category/secondCategory/'+ cg_code;
+    let url = '/common/category/secondCategory/'+ cg_code;
       $.getJSON(url, function (category) {
         
         // console.log(category);
@@ -44,7 +44,7 @@ $(document).ready(function() {
       // https://travelpark.tistory.com/30
       // 한글이나 특수문자를 서버에 보낼 때 오류가 나는 경우.
       // 인코딩 과정을 통하여 보내 처리 할 수 있다.
-      location.href = `/user/item/item_list?cg_code=${cg_code}&cg_name=${cg_name}`;
+      location.href = `/member/item/item_list?cg_code=${cg_code}&cg_name=${cg_name}`;
 
     })
   });

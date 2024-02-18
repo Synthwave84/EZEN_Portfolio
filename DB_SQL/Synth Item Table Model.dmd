@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Synth Item Table Model" id="006AC214-5DBC-C5DA-E61A-833AB6D0BD54" version="3.5">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:29:26 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>006AC214-5DBC-C5DA-E61A-833AB6D0BD54</designId>
+</OSDM_Design>

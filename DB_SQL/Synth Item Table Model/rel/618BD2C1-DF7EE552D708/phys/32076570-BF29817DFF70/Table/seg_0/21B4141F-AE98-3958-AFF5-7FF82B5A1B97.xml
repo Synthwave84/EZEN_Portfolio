@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ITEM_TBL" directorySegmentName="seg_0" id="21B4141F-AE98-3958-AFF5-7FF82B5A1B97">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4A79E7AC-DF8C-F6CC-2735-F204E64B0A85</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ITEM_CONTENT" id="04ED31A3-B66B-1CFD-F0E8-6774A278233B">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_MANUFACTURE" id="135987AE-24A4-BC68-B8D3-B1388CE737F9">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_NAME" id="3EF99084-F896-55AE-9770-03C3AD155C01">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_PRICE" id="4315C4D5-315B-EF92-6DBD-596F8015AA22">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_BUY" id="4D932404-6841-1351-8A59-AB6A3E47792A">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_AMOUNT" id="5379544B-BF02-098D-D314-A2365330E429">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CG_CODE" id="6E59CF3C-F610-EAE7-330B-527B2FBB941E">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_UP_FOLDER" id="8A703D19-8C45-4879-2594-20F30A168E11">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_DISCOUNT" id="AEDCCDB0-C426-D083-D12B-F73726BBFF80">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_SHORT_DETAIL" id="AF450165-9E0F-801F-4BC4-1C720F439250">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_NO" id="D18926A4-B883-175A-CCB0-08B75436AAB5">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_UPDATEDATE" id="D28FDCF6-F3BA-399A-180E-8F10F0714B65">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<defaultValue>SYSDATE</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ITEM_IMG" id="D94A03AC-2F45-F289-6028-01DC779F02AB">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ITEM_DATE" id="EBF5CFC8-AE92-A20D-C9AE-CF582470A7A3">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<defaultValue>SYSDATE</defaultValue>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_ITEM_NO" id="9BAEE757-D1EB-3137-2F83-3BB14DAAC53E">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<schemaObject>150F5588-B16A-6566-6980-5EFBD763AECB</schemaObject>
+<segment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C008025" id="D809C0B2-A983-4D40-8959-6C90B84617A9">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C008024" id="DA53378F-E02F-1864-F224-F3776DC64F5B">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_ITEM_NO" id="25830CA9-90C3-0C78-A6F5-99B1FDE7B269">
+<createdBy>Stella</createdBy>
+<createdTime>2023-12-15 00:31:38 UTC</createdTime>
+<ownerDesignName>Synth Item Table Model</ownerDesignName>
+<segment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</segment>
+<tableSpace>1FE51136-D8B2-D785-CE8A-04E4A00D306B</tableSpace>
+<existingIndex>9BAEE757-D1EB-3137-2F83-3BB14DAAC53E</existingIndex>
+<indexSegment>ED5BCE98-DF26-D7B9-328B-6A2DEDBB4E91</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

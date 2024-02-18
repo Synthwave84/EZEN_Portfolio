@@ -36,5 +36,15 @@
 		WHERE 
 			CG_CODE = #{cg_code}
 	</select>
+	<select id="getManufacture" resultType="com.synth.domain.ItemManufactureVO">
+	  	SELECT 	M.MANUFACTURE_CODE, 
+	  			M.MANUFACTURE_NAME,
+	  			M.CG_CODE
+        FROM 
+        		MANUFACTURE_TAB M
+        INNER JOIN 
+        			CG_CODE_TBL C ON M.CG_CODE = C.CG_CODE
+        WHERE M.CG_CODE = #{cg_code}
+	</select>
 
 </mapper>
